@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KING ABDO Search</title>
+    
+    <!-- إضافة الأيقونة إلى الـ tab -->
+    <link rel="icon" href="https://img.pikbest.com/png-images/letter-a-black-metal-letters_5878756.png!w700wp" type="image/png">
+
+    <style>
+        /* إعداد الخلفية */
+        body {
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20220522/pngtree-abstract-template-luxury-overlapping-layer-on-black-background-with-golden-lines-image_1384223.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        /* شاشة التحميل */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            font-size: 2em;
+            font-weight: bold;
+            animation: fadeOut 2s ease forwards;
+            animation-delay: 3s;
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* نص ترحيب متحرك */
+        .welcome-text {
+            font-size: 1.5em;
+            color: gold;
+            animation: floatUpDown 3s infinite;
+            margin-top: 15px;
+            text-align: center;
+        }
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* تأثير لمعان النص */
+        h1 {
+            position: relative;
+            font-size: 3em;
+            color: gold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            animation: shine 2s infinite;
+        }
+        @keyframes shine {
+            100% { left: 100%; }
+        }
+
+        /* مركز البحث */
+        .search-container {
+            text-align: center;
+            color: gold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+
+        /* تنسيق الحقل وزر البحث */
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid gold;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        /* الأزرار والظلال */
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: black;
+            background-color: gold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+        button:hover {
+            box-shadow: 0px 0px 10px 2px gold;
+        }
+
+        /* صورة أسفل يسار */
+        .corner-image {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            width: 70px;
+            height: auto;
+            z-index: 10;
+        }
+
+        /* شريط التنقل */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: gold;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            gap: 20px;
+            border-radius: 15px;
+        }
+
+        .navbar a {
+            color: gold;
+            text-decoration: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.2s;
+            padding: 5px 15px;
+            border-radius: 15px;
+            background-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .navbar a:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 215, 0, 0.4);
+        }
+
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: gold;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* تأثير التلاشي */
+        .fade {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* حقوق النشر */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: gold;
+            font-size: 0.9em;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body onload="hideLoadingScreen()">
+
+    <!-- شاشة التحميل -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">KING ABDO</div>
+    </div>
+
+    <!-- شريط التنقل -->
+    <div class="navbar">
+        <a onclick="showSection('home')">الصفحة الرئيسية</a>
+        <a onclick="showSection('quran')">القرآن الكريم</a>
+        <a onclick="showSection('azkar')">الأذكار</a>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="search-container" id="homeSection">
+        <h1>KING ABDO</h1>
+        <p class="welcome-text">مرحباً بك في محرك بحث KING ABDO</p>
+        <input type="text" placeholder="ابحث هنا">
+        <button onclick="search()">بحث</button>
+    </div>
+
+    <!-- قسم القرآن الكريم -->
+<div class="search-container fade" id="quranSection" style="display: none;">
+    <h1>القرآن الكريم</h1>
+    <p class="welcome-text">
+        <a href="https://quran.com" target="_blank" style="color: gold; text-decoration: none;">
+            يمكنك الاستماع للقرآن هنا
+        </a>
+    </p>
+</div>
+
+    </div>
+
+    <!-- قسم الأذكار -->
+    <div class="search-container fade" id="azkarSection" style="display: none;">
+        <h1>الأذكار</h1>
+        <p class="welcome-text">استمع إلى الأذكار</p>
+        <audio controls>
+            <source src="https://ia800709.us.archive.org/14/items/Du3a_uP_bY_mUSLEm/082-_up_by_muslem.mp3" type="audio/mpeg">
+            المتصفح الخاص بك لا يدعم مشغل الصوت.
+        </audio>
+    </div>
+
+    <!-- صورة أسفل يسار -->
+    <img src="https://img.pikbest.com/png-images/letter-a-black-metal-letters_5878756.png!w700wp" alt="Letter A" class="corner-image">
+
+    <!-- حقوق النشر -->
+    <div class="footer">© جميع الحقوق محفوظة لـ KING ABDO</div>
+
+    <script>
+        // إخفاء شاشة التحميل بعد التحميل
+        function hideLoadingScreen() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 3000); // إخفاء الشاشة بعد 3 ثواني
+        }
+
+        // وظيفة البحث
+        function sanitizeInput(input) {
+            return input.replace(/[<>]/g, ""); // حماية من الرموز الضارة
+        }
+
+        function search() {
+            const query = sanitizeInput(document.querySelector('input[type="text"]').value);
+            if (query) {
+                window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+            } else {
+                alert('من فضلك أدخل كلمة بحث');
+            }
+        }
+
+        // التحكم في عرض الأقسام بتأثير التلاشي
+        function showSection(section) {
+            const sections = ['homeSection', 'quranSection', 'azkarSection'];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (id === section + 'Section') {
+                    el.style.display = 'flex';
+                    setTimeout(() => el.classList.remove('fade'), 10);
+                } else {
+                    el.classList.add('fade');
+                    setTimeout(() => el.style.display = 'none', 500);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
