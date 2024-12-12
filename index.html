@@ -193,6 +193,11 @@
     </style>
 </head>
 <body onload="hideLoadingScreen()">
+<div id="datetime-prayer" style="text-align: center; margin-top: 10px;">
+    <h2 id="current-time"></h2>
+    <h3 id="hijri-date"></h3>
+    <h4 id="next-prayer"></h4>
+</div>
 
     <!-- شاشة التحميل -->
     <div class="loading-screen" id="loadingScreen">
@@ -279,5 +284,155 @@
             });
         }
     </script>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وقت الصلاة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: gold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .time-date-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            padding: 15px;
+            border: 2px solid gold;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 300px;
+        }
+
+        .time-date-container p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="time-date-container">
+        <p id="next-prayer">أقرب صلاة: جاري التحديث...</p>
+    </div>
+
+    <script>
+        // حساب وقت الصلاة باستخدام مكتبة أوقات الصلاة
+        function getNextPrayer() {
+            const now = new Date();
+            const latitude = 30.0444; // خط عرض القاهرة
+            const longitude = 31.2357; // خط طول القاهرة
+            const timeZone = 2; // التوقيت المحلي لمصر
+
+            // معادلات بسيطة لحساب الصلاة
+            const prayers = [
+                { name: "الفجر", time: "5:00" },
+                { name: "الظهر", time: "12:00" },
+                { name: "العصر", time: "15:30" },
+                { name: "المغرب", time: "17:45" },
+                { name: "العشاء", time: "19:00" },
+            ];
+
+            const nowHours = now.getHours();
+            const nowMinutes = now.getMinutes();
+            let nextPrayer = "لا توجد صلاة حالياً";
+
+            for (let i = 0; i < prayers.length; i++) {
+                const [prayerHours, prayerMinutes] = prayers[i].time.split(":").map(Number);
+                if (nowHours < prayerHours || (nowHours === prayerHours && nowMinutes < prayerMinutes)) {
+                    nextPrayer = `${prayers[i].name} (${prayers[i].time})`;
+                    break;
+                }
+            }
+
+        }
+
+        // تحديث البيانات كل ثانية
+        function updateAll() {
+            getNextPrayer();
+        }
+        setInterval(updateAll, 1000);
+
+        // تحديث عند تحميل الصفحة
+        updateAll();
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوضع الليلي والنهاري</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.night-mode {
+            background-color: #111;
+            color: gold;
+        }
+
+        body.day-mode {
+            background-color: #f5f5f5;
+            color: #333;
+            background-image: url('https://i.pinimg.com/736x/e9/4e/c1/e94ec1df570d25fc08d4a6d6a5731a1c.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .mode-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: gold;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .mode-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="night-mode">
+    <button class="mode-toggle" id="modeToggle">الوضع النهاري</button>
+
+    <script>
+        const modeToggle = document.getElementById('modeToggle');
+        const body = document.body;
+
+        modeToggle.addEventListener('click', () => {
+            if (body.classList.contains('night-mode')) {
+                body.classList.remove('night-mode');
+                body.classList.add('day-mode');
+                modeToggle.textContent = 'الوضع الليلي';
+            } else {
+                body.classList.remove('day-mode');
+                body.classList.add('night-mode');
+                modeToggle.textContent = 'الوضع النهاري';
+            }
+        });
+    </script>
+</body>
+</html>
+
 </body>
 </html>
