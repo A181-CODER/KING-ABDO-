@@ -1,1 +1,4 @@
+git add .
+git commit -m "حذف قسم الصلاة"
+git push
 
