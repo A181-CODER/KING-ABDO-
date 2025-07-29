@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="ar">
-<head>
+<html lang="ar"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -192,11 +193,13 @@
         }
     </style>
 </head>
-<body onload="hideLoadingScreen()">
+
+
+<body onload="hideLoadingScreen()" class="night-mode" inject_video_svd="true">
 
 
     <!-- شاشة التحميل -->
-    <div class="loading-screen" id="loadingScreen">
+    <div class="loading-screen" id="loadingScreen" style="display: none;">
         <div class="loading-logo">KING ABDO</div>
     </div>
 
@@ -225,13 +228,13 @@
     </p>
 </div>
 
-    </div>
+    
 
     <!-- قسم الأذكار -->
     <div class="search-container fade" id="azkarSection" style="display: none;">
         <h1>الأذكار</h1>
         <p class="welcome-text">استمع إلى الأذكار</p>
-        <audio controls>
+        <audio controls="">
             <source src="https://ia800709.us.archive.org/14/items/Du3a_uP_bY_mUSLEm/082-_up_by_muslem.mp3" type="audio/mpeg">
             المتصفح الخاص بك لا يدعم مشغل الصوت.
         </audio>
@@ -280,9 +283,9 @@
             });
         }
     </script>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>وقت الصلاة</title>
@@ -309,18 +312,18 @@
 
        
     </style>
-</head>
-<body>
+
+
    
     <script>
                 // تحديث عند تحميل الصفحة
         updateAll();
     </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
+
+
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الوضع الليلي والنهاري</title>
@@ -365,8 +368,8 @@
             transform: scale(1.1);
         }
     </style>
-</head>
-<body class="night-mode">
+
+
     <button class="mode-toggle" id="modeToggle">الوضع النهاري</button>
 
     <script>
@@ -385,12 +388,274 @@
             }
         });
     </script>
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محرك البحث المصري</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #D4AF37; /* اللون الذهبي */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* شريط الصلاة */
+        .prayer-time {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+        
+        .next-prayer {
+            font-weight: bold;
+            color: #FFD700;
+        }
+        
+        /* استطلاع الرأي */
+        .feedback-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #D4AF37;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            width: 250px;
+        }
+        
+        .feedback-container p {
+            color: #D4AF37;
+            margin-top: 0;
+        }
+        
+        .feedback-btn {
+            margin: 5px;
+            padding: 8px 15px;
+            border: 1px solid #D4AF37;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #000;
+            color: #D4AF37;
+            transition: all 0.3s;
+        }
+        
+        .feedback-btn:hover {
+            background-color: #D4AF37;
+            color: #000;
+        }
+        
+        /* شعار مصر */
+        .egypt-flag {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 40px;
+            background: linear-gradient(to bottom, 
+                #CE1126 33%, 
+                #FFFFFF 33% 66%, 
+                #000000 66%);
+            border: 1px solid #D4AF37;
+            z-index: 1000;
+        }
+        
+        /* السهم الجانبي */
+        .profile-arrow {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #D4AF37;
+            border-right: none;
+            border-radius: 8px 0 0 8px;
+            padding: 15px;
+            width: 30px;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .profile-arrow:hover {
+            width: 200px;
+        }
+        
+        .profile-arrow:hover .arrow-icon {
+            display: none;
+        }
+        
+        .profile-arrow:hover .profile-content {
+            display: block;
+        }
+        
+        .arrow-icon {
+            color: #D4AF37;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .profile-content {
+            display: none;
+            color: #D4AF37;
+        }
+        
+        .profile-content h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #D4AF37;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط مواقيت الصلاة -->
+    <div class="prayer-time" id="prayerTime">
+        جاري تحميل مواقيت الصلاة...
+    </div>
+    
+    <!-- استطلاع الرأي -->
+    <div class="feedback-container">
+        <p>كيف كانت تجربتك مع محرك البحث؟</p>
+        <button class="feedback-btn" onclick="sendFeedback('جيدة')">جيدة 👍</button>
+        <button class="feedback-btn" onclick="sendFeedback('متوسطة')">متوسطة 😐</button>
+        <button class="feedback-btn" onclick="sendFeedback('سيئة')">سيئة 👎</button>
+    </div>
+    
+      
+    <!-- السمع مع النبذة الشخصية -->
+    <div class="profile-arrow">
+        <div class="arrow-icon">⇦</div>
+        <div class="profile-content">
+            <h3>نبذة عني</h3>
+            <p>
+
+الاسم:  KING ABDO 👑
+الملكية: مالك ومؤسس هذا الموقع.</p>
+            <p>معلومات عن الموقع
+نوع الموقع: محرك بحث 🔍
+
+الهدف: توفير أداة بحث سريعة ودقيقة لمساعدة المستخدمين في العثور على المعلومات بسهولة وكفاءة.
+
+المميزات:
+
+واجهة بسيطة وسهلة الاستخدام.
+
+نتائج بحث مُرشَّحة ومُحسَّنة.
+
+دعم البحث باللغة العربية والإنجليزية.
+
+معلومات إضافية عني
+الاهتمامات: التكنولوجيا، البرمجة، تطوير الويب، والذكاء الاصطناعي.
+
+الرؤية: بناء أدوات رقمية تُسهِّل حياة المستخدمين وتواكب العصر الرقمي.</p>
+                     <p>لماذا اخترت اسم "KING ABDO"؟
+
+"أحب أن أكون مصدر ثقة ومساعدة للآخرين، لذا اخترت لقب KING ABDO كرمز للقيادة في مجال التكنولوجيا!" 👊</p>
+                     
+            <p>يمكنك التواصل معي عبر @email.com</p>
+        </div>
+    </div>
+    
+    <script>
+        // أوقات الصلاة لمصر (يمكن تحديثها عبر API)
+        const prayerTimes = {
+            "الفجر": "04:30",
+            "الشروق": "06:00",
+            "الظهر": "13:00",
+            "العصر": "16:30",
+            "المغرب": "19:50",
+            "العشاء": "21:20"
+        };
+        
+        // دالة تحديث مواقيت الصلاة
+        function updatePrayerTimes() {
+            const now = new Date();
+            const currentTime = now.getHours() * 60 + now.getMinutes();
+            
+            let nextPrayer = "";
+            let remainingTime = "";
+            let foundCurrent = false;
+            
+            for (const [prayer, time] of Object.entries(prayerTimes)) {
+                const [hours, minutes] = time.split(':').map(Number);
+                const prayerTimeInMinutes = hours * 60 + minutes;
+                
+                if (prayerTimeInMinutes > currentTime) {
+                    const diff = prayerTimeInMinutes - currentTime;
+                    const hoursLeft = Math.floor(diff / 60);
+                    const minutesLeft = diff % 60;
+                    
+                    nextPrayer = prayer;
+                    remainingTime = `${hoursLeft} ساعة و ${minutesLeft} دقيقة`;
+                    foundCurrent = true;
+                    break;
+                }
+            }
+            
+            if (!foundCurrent) {
+                nextPrayer = "الفجر";
+                remainingTime = "حتى الغد";
+            }
+            
+            document.getElementById('prayerTime').innerHTML = `
+                الصلاة القادمة: <span class="next-prayer">${nextPrayer}</span><br>
+                متبقي: ${remainingTime}
+            `;
+        }
+        
+        // دالة إرسال التقييم
+        function sendFeedback(rating) {
+            // هنا يمكنك إرسال البيانات إلى الخادم
+            fetch('/api/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    rating: rating,
+                    location: "مصر" 
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('شكرًا لك على تقييمك! سنعمل على تحسين تجربتك.');
+                document.querySelector('.feedback-container').style.display = 'none';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+        
+        // تحديث البيانات كل دقيقة
+        updatePrayerTimes();
+        setInterval(updatePrayerTimes, 60000);
+        
+               
+        egyptFlag.addEventListener('mouseout', () => {
+            egyptFlag.style.transform = 'scale(1)';
+            egyptFlag.style.boxShadow = 'none';
+        });
+    </script>
 </body>
 </html>
 
-</body>
+
+<div id="videoPopupMenu"></div></body>
+
+<div style="top: 60px; left: 85%; display: none;" class="videoAiLogo"><div class="video-ai-circle">AI</div><div class="video-ai-close">×</div></div>
+
 </html>
-<!-- تحديث بسيط لإجبار GitHub Pages على التحديث -->
-git add .
-git commit -m "trigger rebuild"
-git push
