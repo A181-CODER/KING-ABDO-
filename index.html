@@ -1,15 +1,35 @@
+
 <!DOCTYPE html>
-<html lang="ar"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <head>
+<html lang="ar" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1) Content Security Policy (CSP) — يعمل عبر meta -->
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+               img-src 'self' data:;
+               font-src 'self' https://fonts.gstatic.com;
+               connect-src 'self';
+               frame-ancestors 'none';
+               base-uri 'self';
+               form-action 'self'">
+
+<!-- 2) Referrer policy (يعمل عبر meta) -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- 3) منع sniffing نوع المحتوى — (بعض المتصفحات لا تقرأه من meta لكن نجرب) -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<!-- 4) وضع عنوان للصفحة وتوافق العرض -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KING ABDO</title>
+
     <title>KING ABDO Search</title>
-    
     <!-- إضافة الأيقونة إلى الـ tab -->
     <link rel="icon" href="https://img.pikbest.com/png-images/letter-a-black-metal-letters_5878756.png!w700wp" type="image/png">
-
     <style>
         /* إعداد الخلفية */
         body {
@@ -25,6 +45,87 @@
             position: relative;
             overflow-y: auto;
         }
+        /* تصغير تقييمات التجربة */
+.feedback-container button {
+    font-size: 0.8em;
+    padding: 6px 10px;
+    margin: 3px;
+}
+
+/* زر تغيير الخلفية في أعلى يسار الشاشة */
+#toggle-background {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.9em;
+    padding: 6px 12px;
+    z-index: 1000;
+}
+
+/* تنسيق شريط الروابط */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.navbar a {
+    font-size: 0.9em;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: gold;
+    background-color: black;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.05);
+}.prayer-time {
+  background: linear-gradient(135deg, #fffdf5, #f7f3e9);
+  border: 2px solid #d4af37; /* لون ذهبي ملكي */
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  max-width: 500px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 18px;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: right;
+  transition: all 0.3s ease-in-out;
+}
+
+.prayer-time:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-color: #b8860b; /* لون ذهبي أغمق عند التحريك */
+}/* الوضع الأساسي للابتوب */
+#prayerTime {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  background-color: #0d0c0c;
+  color: #ffd700;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+/* الوضع في الموبايل */
+@media (max-width: 768px) {
+  #prayerTime {
+    top: auto;
+    top: 20px;
+    right: 15%;
+    transform: translateX(50%);
+    font-size: 14px;
+  }
+}
 
         /* شاشة التحميل */
         .loading-screen {
@@ -47,7 +148,6 @@
         @keyframes fadeOut {
             to { opacity: 0; visibility: hidden; }
         }
-
         /* نص ترحيب متحرك */
         .welcome-text {
             font-size: 1.5em;
@@ -60,7 +160,6 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-
         /* تأثير لمعان النص */
         h1 {
             position: relative;
@@ -84,7 +183,6 @@
         @keyframes shine {
             100% { left: 100%; }
         }
-
         /* مركز البحث */
         .search-container {
             text-align: center;
@@ -95,7 +193,6 @@
             opacity: 1;
             transition: opacity 0.5s;
         }
-
         /* تنسيق الحقل وزر البحث */
         input[type="text"] {
             padding: 10px;
@@ -106,7 +203,6 @@
             width: 300px;
             text-align: center;
         }
-
         /* الأزرار والظلال */
         button {
             padding: 10px 20px;
@@ -121,7 +217,6 @@
         button:hover {
             box-shadow: 0px 0px 10px 2px gold;
         }
-
         /* صورة أسفل يسار */
         .corner-image {
             position: fixed;
@@ -131,7 +226,6 @@
             height: auto;
             z-index: 10;
         }
-
         /* شريط التنقل */
         .navbar {
             position: fixed;
@@ -145,7 +239,6 @@
             gap: 20px;
             border-radius: 15px;
         }
-
         .navbar a {
             color: gold;
             text-decoration: none;
@@ -156,12 +249,10 @@
             border-radius: 15px;
             background-color: rgba(255, 215, 0, 0.2);
         }
-
         .navbar a:hover {
             transform: translateY(-5px);
             background-color: rgba(255, 215, 0, 0.4);
         }
-
         /* تخصيص شريط التمرير */
         ::-webkit-scrollbar {
             width: 8px;
@@ -173,13 +264,11 @@
         ::-webkit-scrollbar-track {
             background-color: rgba(0, 0, 0, 0.5);
         }
-
         /* تأثير التلاشي */
         .fade {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
-
         /* حقوق النشر */
         .footer {
             position: fixed;
@@ -191,220 +280,6 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.7);
         }
-    </style>
-</head>
-
-
-<body onload="hideLoadingScreen()" class="night-mode" inject_video_svd="true">
-
-
-    <!-- شاشة التحميل -->
-    <div class="loading-screen" id="loadingScreen" style="display: none;">
-        <div class="loading-logo">KING ABDO</div>
-    </div>
-
-    <!-- شريط التنقل -->
-    <div class="navbar">
-        <a onclick="showSection('home')">الصفحة الرئيسية</a>
-        <a onclick="showSection('quran')">القرآن الكريم</a>
-        <a onclick="showSection('azkar')">الأذكار</a>
-    </div>
-
-    <!-- المحتوى الرئيسي -->
-    <div class="search-container" id="homeSection">
-        <h1>KING ABDO</h1>
-        <p class="welcome-text">مرحباً بك في محرك بحث KING ABDO</p>
-        <input type="text" placeholder="ابحث هنا">
-        <button onclick="search()">بحث</button>
-    </div>
-
-    <!-- قسم القرآن الكريم -->
-<div class="search-container fade" id="quranSection" style="display: none;">
-    <h1>القرآن الكريم</h1>
-    <p class="welcome-text">
-        <a href="https://quran.com" target="_blank" style="color: gold; text-decoration: none;">
-            يمكنك الاستماع للقرآن هنا
-        </a>
-    </p>
-</div>
-
-    
-
-    <!-- قسم الأذكار -->
-    <div class="search-container fade" id="azkarSection" style="display: none;">
-        <h1>الأذكار</h1>
-        <p class="welcome-text">استمع إلى الأذكار</p>
-        <audio controls="">
-            <source src="https://ia800709.us.archive.org/14/items/Du3a_uP_bY_mUSLEm/082-_up_by_muslem.mp3" type="audio/mpeg">
-            المتصفح الخاص بك لا يدعم مشغل الصوت.
-        </audio>
-    </div>
-
-    <!-- صورة أسفل يسار -->
-    <img src="https://img.pikbest.com/png-images/letter-a-black-metal-letters_5878756.png!w700wp" alt="Letter A" class="corner-image">
-
-    <!-- حقوق النشر -->
-    <div class="footer">© جميع الحقوق محفوظة لـ KING ABDO</div>
-
-    <script>
-        // إخفاء شاشة التحميل بعد التحميل
-        function hideLoadingScreen() {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').style.display = 'none';
-            }, 3000); // إخفاء الشاشة بعد 3 ثواني
-        }
-
-        // وظيفة البحث
-        function sanitizeInput(input) {
-            return input.replace(/[<>]/g, ""); // حماية من الرموز الضارة
-        }
-
-        function search() {
-            const query = sanitizeInput(document.querySelector('input[type="text"]').value);
-            if (query) {
-                window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
-            } else {
-                alert('من فضلك أدخل كلمة بحث');
-            }
-        }
-
-        // التحكم في عرض الأقسام بتأثير التلاشي
-        function showSection(section) {
-            const sections = ['homeSection', 'quranSection', 'azkarSection'];
-            sections.forEach(id => {
-                const el = document.getElementById(id);
-                if (id === section + 'Section') {
-                    el.style.display = 'flex';
-                    setTimeout(() => el.classList.remove('fade'), 10);
-                } else {
-                    el.classList.add('fade');
-                    setTimeout(() => el.style.display = 'none', 500);
-                }
-            });
-        }
-    </script>
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وقت الصلاة</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: gold;
-            margin: 0;
-            padding: 0;
-        }
-
-        .time-date-container {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            text-align: right;
-            padding: 15px;
-            border: 2px solid gold;
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.8);
-            width: 300px;
-        }
-
-       
-    </style>
-
-
-   
-    <script>
-                // تحديث عند تحميل الصفحة
-        updateAll();
-    </script>
-
-
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الوضع الليلي والنهاري</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        body.night-mode {
-            background-color: #111;
-            color: gold;
-        }
-
-        body.day-mode {
-            background-color: #f5f5f5;
-            color: #333;
-            background-image: url('https://i.pinimg.com/736x/e9/4e/c1/e94ec1df570d25fc08d4a6d6a5731a1c.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .mode-toggle {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: gold;
-            color: black;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: transform 0.3s;
-        }
-
-        .mode-toggle:hover {
-            transform: scale(1.1);
-        }
-    </style>
-
-
-    <button class="mode-toggle" id="modeToggle">الوضع النهاري</button>
-
-    <script>
-        const modeToggle = document.getElementById('modeToggle');
-        const body = document.body;
-
-        modeToggle.addEventListener('click', () => {
-            if (body.classList.contains('night-mode')) {
-                body.classList.remove('night-mode');
-                body.classList.add('day-mode');
-                modeToggle.textContent = 'الوضع الليلي';
-            } else {
-                body.classList.remove('day-mode');
-                body.classList.add('night-mode');
-                modeToggle.textContent = 'الوضع النهاري';
-            }
-        });
-    </script>
-
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محرك البحث المصري</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #D4AF37; /* اللون الذهبي */
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
         /* شريط الصلاة */
         .prayer-time {
             position: fixed;
@@ -417,18 +292,17 @@
             border-radius: 5px;
             font-family: Arial, sans-serif;
             z-index: 1000;
+            font-size: 1em;
         }
-        
         .next-prayer {
             font-weight: bold;
             color: #FFD700;
         }
-        
         /* استطلاع الرأي */
         .feedback-container {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 37px;
+            right: 0px;
             background: rgba(0, 0, 0, 0.8);
             border: 1px solid #D4AF37;
             padding: 15px;
@@ -437,12 +311,10 @@
             z-index: 1000;
             width: 250px;
         }
-        
         .feedback-container p {
             color: #D4AF37;
             margin-top: 0;
         }
-        
         .feedback-btn {
             margin: 5px;
             padding: 8px 15px;
@@ -453,25 +325,9 @@
             color: #D4AF37;
             transition: all 0.3s;
         }
-        
         .feedback-btn:hover {
             background-color: #D4AF37;
             color: #000;
-        }
-        
-        /* شعار مصر */
-        .egypt-flag {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 40px;
-            background: linear-gradient(to bottom, 
-                #CE1126 33%, 
-                #FFFFFF 33% 66%, 
-                #000000 66%);
-            border: 1px solid #D4AF37;
-            z-index: 1000;
         }
         
         /* السهم الجانبي */
@@ -490,43 +346,88 @@
             cursor: pointer;
             z-index: 1000;
         }
-        
         .profile-arrow:hover {
             width: 200px;
         }
-        
         .profile-arrow:hover .arrow-icon {
             display: none;
         }
-        
         .profile-arrow:hover .profile-content {
             display: block;
         }
-        
         .arrow-icon {
             color: #D4AF37;
             font-size: 20px;
             text-align: center;
         }
-        
         .profile-content {
             display: none;
             color: #D4AF37;
         }
-        
         .profile-content h3 {
             margin-top: 0;
             border-bottom: 1px solid #D4AF37;
             padding-bottom: 5px;
         }
+        /* زر التبديل بين الوضع الليلي والنهاري */
+        .mode-toggle {
+            position: fixed;
+            top: 5px;
+            left: 0px;
+            background-color: gold;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        .mode-toggle:hover {
+            transform: scale(1.1);
+        }
+        /* التأثيرات للوضع النهاري */
+        body.day-mode {
+            background-image: url('https://i.pinimg.com/736x/e9/4e/c1/e94ec1df570d25fc08d4a6d6a5731a1c.jpg') !important;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #ffffff;
+        }
+        body.day-mode .navbar,
+        body.day-mode .footer,
+        body.day-mode .prayer-time,
+        body.day-mode .feedback-container,
+        body.day-mode .profile-arrow {
+            color: #ffd900;
+            border-color: #ffbb00;
+        }
     </style>
 </head>
-<body>
+<body class="night-mode" onload="hideLoadingScreen()" inject_video_svd="true">
+
+    <!-- شاشة التحميل -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">KING ABDO</div>
+    </div>
+
+    <!-- زر التبديل بين الوضع الليلي والنهاري -->
+    <button class="mode-toggle" id="modeToggle">☀️</button>
+
+    <!-- شريط التنقل -->
+    <div class="navbar">
+        <a onclick="showSection('home')">الصفحة الرئيسية</a>
+        <a onclick="showSection('quran')">القرآن الكريم</a>
+        <a onclick="showSection('azkar')">الأذكار</a>
+    </div>
+
     <!-- شريط مواقيت الصلاة -->
     <div class="prayer-time" id="prayerTime">
         جاري تحميل مواقيت الصلاة...
     </div>
-    
+
     <!-- استطلاع الرأي -->
     <div class="feedback-container">
         <p>كيف كانت تجربتك مع محرك البحث؟</p>
@@ -534,42 +435,124 @@
         <button class="feedback-btn" onclick="sendFeedback('متوسطة')">متوسطة 😐</button>
         <button class="feedback-btn" onclick="sendFeedback('سيئة')">سيئة 👎</button>
     </div>
-    
-      
-    <!-- السمع مع النبذة الشخصية -->
+
+    <!-- السهم الجانبي للملف الشخصي -->
     <div class="profile-arrow">
         <div class="arrow-icon">⇦</div>
         <div class="profile-content">
             <h3>نبذة عني</h3>
             <p>
-
-الاسم:  KING ABDO 👑
-الملكية: مالك ومؤسس هذا الموقع.</p>
-            <p>معلومات عن الموقع
-نوع الموقع: محرك بحث 🔍
-
-الهدف: توفير أداة بحث سريعة ودقيقة لمساعدة المستخدمين في العثور على المعلومات بسهولة وكفاءة.
-
-المميزات:
-
-واجهة بسيطة وسهلة الاستخدام.
-
-نتائج بحث مُرشَّحة ومُحسَّنة.
-
-دعم البحث باللغة العربية والإنجليزية.
-
-معلومات إضافية عني
-الاهتمامات: التكنولوجيا، البرمجة، تطوير الويب، والذكاء الاصطناعي.
-
-الرؤية: بناء أدوات رقمية تُسهِّل حياة المستخدمين وتواكب العصر الرقمي.</p>
-                     <p>لماذا اخترت اسم "KING ABDO"؟
-
-"أحب أن أكون مصدر ثقة ومساعدة للآخرين، لذا اخترت لقب KING ABDO كرمز للقيادة في مجال التكنولوجيا!" 👊</p>
+                الاسم: KING ABDO 👑<br>
+                الملكية: مالك ومؤسس هذا الموقع.
+            </p>
+            <p>
+                معلومات عن الموقع<br>
+                نوع الموقع: محرك بحث 🔍<br>
+                الهدف: توفير أداة بحث سريعة ودقيقة لمساعدة المستخدمين في العثور على المعلومات بسهولة وكفاءة.<br>
+                المميزات:<br>
+                واجهة بسيطة وسهلة الاستخدام.<br>
+                نتائج بحث مُرشَّحة ومُحسَّنة.<br>
+                دعم البحث باللغة العربية والإنجليزية.
+            </p>
+            <p>
+                معلومات إضافية عني<br>
+                الاهتمامات: التكنولوجيا، البرمجة، تطوير الويب، والذكاء الاصطناعي.<br>
+                الرؤية: بناء أدوات رقمية تُسهِّل حياة المستخدمين وتواكب العصر الرقمي.
+            </p>
+            <p>
+                لماذا اخترت اسم "KING ABDO"؟<br>
+                "أحب أن أكون مصدر ثقة ومساعدة للآخرين، لذا اخترت لقب KING ABDO كرمز للقيادة في مجال التكنولوجيا!" 👊
+            </p>
+            
         </div>
     </div>
-    
+
+    <!-- المحتوى الرئيسي -->
+    <div class="search-container" id="homeSection">
+        <h1>KING ABDO</h1>
+        <p class="welcome-text">مرحباً بك في محرك بحث KING ABDO</p>
+        <input type="text" placeholder="ابحث هنا">
+        <button onclick="search()">بحث</button>
+    </div>
+
+    <!-- قسم القرآن الكريم -->
+    <div class="search-container fade" id="quranSection" style="display: none;">
+        <h1>القرآن الكريم</h1>
+        <p class="welcome-text">
+            <a href="https://quran.com" target="_blank" style="color: gold; text-decoration: none;">
+                يمكنك الاستماع للقرآن هنا
+            </a>
+        </p>
+    </div>
+
+    <!-- قسم الأذكار -->
+    <div class="search-container fade" id="azkarSection" style="display: none;">
+        <h1>الأذكار</h1>
+        <p class="welcome-text">استمع إلى الأذكار</p>
+        <audio controls>
+            <source src="https://ia800709.us.archive.org/14/items/Du3a_uP_bY_mUSLEm/082-_up_by_muslem.mp3" type="audio/mpeg">
+            المتصفح الخاص بك لا يدعم مشغل الصوت.
+        </audio>
+    </div>
+
+    <!-- صورة أسفل يسار -->
+    <img src="https://img.pikbest.com/png-images/letter-a-black-metal-letters_5878756.png!w700wp" alt="Letter A" class="corner-image">
+
+    <!-- حقوق النشر -->
+    <div class="footer">© جميع الحقوق محفوظة لـ KING ABDO</div>
+
+    <!-- جميع السكريبتات في الأسفل -->
     <script>
-        // أوقات الصلاة لمصر (يمكن تحديثها عبر API)
+if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+  location.href = 'https://' + location.host + location.pathname + location.search + location.hash;
+}
+</script>
+      
+     <script>
+if (window.top !== window.self) {
+  try { window.top.location = window.self.location; }
+  catch (e) { window.self.parentNode.removeChild(window.self); }
+}
+</script>
+
+
+    <script>
+        // إخفاء شاشة التحميل
+        function hideLoadingScreen() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 3000);
+        }
+
+        // وظيفة البحث
+        function sanitizeInput(input) {
+            return input.replace(/[<>]/g, "");
+        }
+        function search() {
+            const query = sanitizeInput(document.querySelector('input[type="text"]').value);
+            if (query) {
+                window.location.href = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+            } else {
+                alert('من فضلك أدخل كلمة بحث');
+            }
+        }
+
+        // التحكم في عرض الأقسام
+        function showSection(section) {
+            const sections = ['homeSection', 'quranSection', 'azkarSection'];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (id === section + 'Section') {
+                    el.style.display = 'flex';
+                    setTimeout(() => el.classList.remove('fade'), 10);
+                } else {
+                    el.classList.add('fade');
+                    setTimeout(() => el.style.display = 'none', 500);
+                }
+            });
+        }
+
+        // أوقات الصلاة
         const prayerTimes = {
             "الفجر": "04:30",
             "الشروق": "06:00",
@@ -578,82 +561,76 @@
             "المغرب": "19:50",
             "العشاء": "21:20"
         };
-        
-        // دالة تحديث مواقيت الصلاة
+
         function updatePrayerTimes() {
             const now = new Date();
             const currentTime = now.getHours() * 60 + now.getMinutes();
-            
             let nextPrayer = "";
             let remainingTime = "";
             let foundCurrent = false;
-            
             for (const [prayer, time] of Object.entries(prayerTimes)) {
                 const [hours, minutes] = time.split(':').map(Number);
                 const prayerTimeInMinutes = hours * 60 + minutes;
-                
                 if (prayerTimeInMinutes > currentTime) {
                     const diff = prayerTimeInMinutes - currentTime;
                     const hoursLeft = Math.floor(diff / 60);
                     const minutesLeft = diff % 60;
-                    
                     nextPrayer = prayer;
                     remainingTime = `${hoursLeft} ساعة و ${minutesLeft} دقيقة`;
                     foundCurrent = true;
                     break;
                 }
             }
-            
             if (!foundCurrent) {
                 nextPrayer = "الفجر";
                 remainingTime = "حتى الغد";
             }
-            
             document.getElementById('prayerTime').innerHTML = `
                 الصلاة القادمة: <span class="next-prayer">${nextPrayer}</span><br>
                 متبقي: ${remainingTime}
             `;
         }
-        
-        // دالة إرسال التقييم
+
+        // إرسال التقييم
         function sendFeedback(rating) {
-            // هنا يمكنك إرسال البيانات إلى الخادم
             fetch('/api/feedback', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ 
-                    rating: rating,
-                    location: "مصر" 
-                }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ rating: rating, location: "مصر" }),
             })
             .then(response => response.json())
             .then(data => {
                 alert('شكرًا لك على تقييمك! سنعمل على تحسين تجربتك.');
                 document.querySelector('.feedback-container').style.display = 'none';
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+            .catch(error => console.error('Error:', error));
         }
-        
-        // تحديث البيانات كل دقيقة
+
+        // تحديث مواقيت الصلاة كل دقيقة
         updatePrayerTimes();
         setInterval(updatePrayerTimes, 60000);
-        
-               
-        egyptFlag.addEventListener('mouseout', () => {
-            egyptFlag.style.transform = 'scale(1)';
-            egyptFlag.style.boxShadow = 'none';
+
+        // تبديل الوضع
+        const modeToggle = document.getElementById('modeToggle');
+        const body = document.body;
+        modeToggle.addEventListener('click', () => {
+            if (body.classList.contains('night-mode')) {
+                body.classList.remove('night-mode');
+                body.classList.add('day-mode');
+                modeToggle.textContent = '🌑';
+            } else {
+                body.classList.remove('day-mode');
+                body.classList.add('night-mode');
+                modeToggle.textContent = '☀️';
+            }
         });
     </script>
+
+    <div id="videoPopupMenu"></div>
+    <div style="top: 60px; left: 85%; display: none;" class="videoAiLogo">
+        <div class="video-ai-circle">AI</div>
+        <div class="video-ai-close">×</div>
+    </div>
+    
 </body>
-</html>
-
-
-<div id="videoPopupMenu"></div></body>
-
-<div style="top: 60px; left: 85%; display: none;" class="videoAiLogo"><div class="video-ai-circle">AI</div><div class="video-ai-close">×</div></div>
-
 </html>
