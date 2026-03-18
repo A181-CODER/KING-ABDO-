@@ -1,208 +1,806 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KING ABDO | محرك البحث</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    
-    <link rel="icon" href="https://img.pikbest.com/png-images/letter-a-black-metal-letters_5878756.png!w700wp" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KING ABDO SEARCH</title>
+  <meta name="description" content="موقع إسلامي عصري يجمع بين البحث، القرآن الكريم، الأذكار، والتعريف بصاحب الموقع." />
+  <style>
+    :root{
+      --bg: #07111f;
+      --bg2: #0c1b30;
+      --card: rgba(255,255,255,0.08);
+      --stroke: rgba(255,255,255,0.12);
+      --text: #eef4ff;
+      --muted: #b9c6dd;
+      --primary: #4cc9f0;
+      --secondary: #7b2cff;
+      --accent: #20e3b2;
+      --danger: #ff6b6b;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+    }
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        }
-        .search-box {
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
-        }
-        .crown-icon {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-    </style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tahoma", Arial, sans-serif;
+    }
+
+    html{
+      scroll-behavior: smooth;
+    }
+
+    body{
+      background:
+        radial-gradient(circle at top right, rgba(76,201,240,.15), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(123,44,255,.18), transparent 25%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container{
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    .blur{
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .blur span{
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .25;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .blur span:nth-child(1){
+      width: 240px; height: 240px;
+      background: var(--primary);
+      top: 5%; right: 8%;
+    }
+
+    .blur span:nth-child(2){
+      width: 260px; height: 260px;
+      background: var(--secondary);
+      bottom: 10%; left: 10%;
+      animation-delay: 2s;
+    }
+
+    .blur span:nth-child(3){
+      width: 180px; height: 180px;
+      background: var(--accent);
+      top: 40%; left: 45%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float{
+      from{ transform: translateY(0) translateX(0) scale(1); }
+      to{ transform: translateY(-20px) translateX(15px) scale(1.08); }
+    }
+
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(7,17,31,.55);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .logo-badge{
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      font-weight: bold;
+    }
+
+    .nav-links{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a{
+      color: var(--muted);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 12px;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover{
+      background: rgba(255,255,255,.07);
+      color: #fff;
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 20px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 10px 30px rgba(76,201,240,.25);
+    }
+
+    .btn-primary:hover{
+      transform: translateY(-2px);
+      opacity: .95;
+    }
+
+    .btn-outline{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.1);
+      color: white;
+    }
+
+    .btn-outline:hover{
+      background: rgba(255,255,255,.1);
+    }
+
+    .hero{
+      padding: 90px 0 40px;
+    }
+
+    .hero-wrap{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-text h1{
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero-text h1 span{
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text p{
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 28px;
+      max-width: 700px;
+    }
+
+    .hero-actions{
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-card{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .mini-stats{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .stat h3{
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .stat p{
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    .section{
+      padding: 38px 0;
+    }
+
+    .section-head{
+      margin-bottom: 24px;
+    }
+
+    .section-head h2{
+      font-size: clamp(1.4rem, 2vw, 2.2rem);
+      margin-bottom: 8px;
+    }
+
+    .section-head p{
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .glass{
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .search-box{
+      padding: 26px;
+    }
+
+    .search-form{
+      display: grid;
+      grid-template-columns: 1fr 170px 140px;
+      gap: 14px;
+    }
+
+    .input, .select{
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.06);
+      color: white;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .input::placeholder{
+      color: #c7d4ea;
+    }
+
+    .select option{
+      color: #111;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card{
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: .25s ease;
+    }
+
+    .card:hover{
+      transform: translateY(-6px);
+      background: rgba(255,255,255,.085);
+    }
+
+    .icon{
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(76,201,240,.2), rgba(123,44,255,.2));
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .card h3{
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p{
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .card a{
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .quran-layout{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .list{
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .list a{
+      text-decoration: none;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: .2s ease;
+    }
+
+    .list a:hover{
+      background: rgba(255,255,255,.1);
+      transform: translateX(-4px);
+    }
+
+    .azkar{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    details{
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    summary{
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      outline: none;
+    }
+
+    details p{
+      color: var(--muted);
+      line-height: 1.9;
+      margin-top: 14px;
+    }
+
+    .about{
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .about-box{
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 30px;
+      background:
+        linear-gradient(135deg, rgba(76,201,240,.14), rgba(123,44,255,.16)),
+        rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .about-box h3{
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .about-text p{
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 14px;
+    }
+
+    footer{
+      padding: 26px 0 40px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-line{
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(255,255,255,.2), transparent);
+      margin-bottom: 22px;
+    }
+
+    .reveal{
+      opacity: 0;
+      transform: translateY(20px);
+      transition: .7s ease;
+    }
+
+    .reveal.show{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px){
+      .hero-wrap,
+      .quran-layout,
+      .about{
+        grid-template-columns: 1fr;
+      }
+
+      .grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .search-form{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px){
+      .grid,
+      .azkar{
+        grid-template-columns: 1fr;
+      }
+
+      .hero{
+        padding-top: 60px;
+      }
+
+      .nav{
+        justify-content: center;
+      }
+
+      .nav-links{
+        justify-content: center;
+      }
+
+      .hero-text h1{
+        font-size: 2rem;
+      }
+
+      .btn{
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-<body class="min-h-screen text-white">
-    <!-- Hero Section -->
-    <div class="container mx-auto px-4 py-16">
-        <div class="flex flex-col items-center justify-center text-center" data-aos="fade-down">
-            <div class="crown-icon mb-4">
-                <i data-feather="award" class="w-16 h-16 text-yellow-400"></i>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">KING ABDO <span class="text-yellow-400">👑</span></h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8">محرك بحث سريع ودقيق</p>
-            <!-- Search Box -->
-            <div class="w-full max-w-2xl search-box rounded-full overflow-hidden mb-16">
-                <div class="relative">
-                    <input id="search-input" type="text" placeholder="ابحث هنا..." class="w-full py-4 px-6 pr-16 text-gray-800 text-lg focus:outline-none">
-                    <button id="search-button" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-2 rounded-full">
-                        <i data-feather="search" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-            <!-- Quick Links -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16">
-                <a href="https://a181-coder.github.io/QURAN-S-HOME/" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-medium transition">
-                    <i data-feather="book" class="inline mr-2"></i> القرآن الكريم
-                </a>
-                <a href="#athkar" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-medium transition">
-                    <i data-feather="sun" class="inline mr-2"></i> الأذكار
-                </a>
-            </div>
-        </div>
-        <!-- About Section -->
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div data-aos="fade-right">
-                <h2 class="text-3xl font-bold mb-6 text-yellow-400">نبذة عني</h2>
-                <div class="space-y-4 text-lg">
-                    <p><span class="font-bold">الاسم:</span> KING ABDO 👑</p>
-                    <p><span class="font-bold">الملكية:</span> مالك ومؤسس هذا الموقع.</p>
-                </div>
-            </div>
-            <div data-aos="fade-left">
-                <img src="https://cdn.qwenlm.ai/output/02b4b2cc-8158-42c3-9924-5b8c66a24efa/t2i/f0a320dc-666e-4474-9b97-f0ff853099e7/1758721380.png?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZV91c2VyX2lkIjoiMDJiNGIyY2MtODE1OC00MmMzLTk5MjQtNWI4YzY2YTI0ZWZhIiwicmVzb3VyY2VfaWQiOiIxNzU4NzIxMzgwIiwicmVzb3VyY2VfY2hhdF9pZCI6ImNjNjFmYWU2LTg0YzgtNGVlOC04ZGQ5LTQwNjlhYjg4MTUyYSJ9._x6UA96PosATTXsdJGKA_O9AG0cXoUcQumiJm8m8agA&x-oss-process=image/resize,m_mfit,w_450,h_450" alt="Technology" class="rounded-xl shadow-xl">
-            </div>
-        </div>
-        <!-- Website Info -->
-        <div class="bg-gray-800 bg-opacity-50 rounded-xl p-8 mb-16" data-aos="zoom-in">
-            <h2 class="text-3xl font-bold mb-6 text-center text-yellow-400">معلومات عن الموقع</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <i data-feather="search" class="w-8 h-8 mb-4 text-blue-400"></i>
-                    <h3 class="text-xl font-bold mb-2">نوع الموقع</h3>
-                    <p>محرك بحث  🔍</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <i data-feather="target" class="w-8 h-8 mb-4 text-green-400"></i>
-                    <h3 class="text-xl font-bold mb-2">الهدف</h3>
-                    <p>توفير أداة بحث سريعة ودقيقة لمساعدة المستخدمين</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg">
-                    <i data-feather="star" class="w-8 h-8 mb-4 text-yellow-400"></i>
-                    <h3 class="text-xl font-bold mb-2">المميزات</h3>
-                    <ul class="list-disc list-inside">
-                        <li>واجهة بسيطة</li>
-                        <li>نتائج بحث مُحسَّنة</li>
-                        <li>دعم اللغات</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Additional Info -->
-        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div data-aos="fade-right">
-                <img src="https://community.thriveglobal.com/wp-content/uploads/2020/07/Modren-Tech.jpg" alt="Vision" class="rounded-xl shadow-xl">
-            </div>
-            <div data-aos="fade-left">
-                <h2 class="text-3xl font-bold mb-6 text-yellow-400">معلومات إضافية</h2>
-                <div class="space-y-4 text-lg">
-                    <p><span class="font-bold">الاهتمامات:</span> التكنولوجيا، البرمجة، تطوير الويب، والذكاء الاصطناعي.</p>
-                    <p><span class="font-bold">الرؤية:</span> بناء أدوات رقمية تُسهِّل حياة المستخدمين وتواكب العصر الرقمي.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Quran Section -->
-        <div id="quran" class="bg-green-900 bg-opacity-30 rounded-xl p-8 mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-6 text-center text-yellow-400">القرآن الكريم</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <i data-feather="book-open" class="w-8 h-8 mb-4 text-green-400 mx-auto"></i>
-                    <h3 class="text-xl font-bold mb-2">استماع</h3>
-                    <p>استمع إلى القرآن الكريم بصوت أشهر القراء</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <i data-feather="search" class="w-8 h-8 mb-4 text-green-400 mx-auto"></i>
-                    <h3 class="text-xl font-bold mb-2">بحث</h3>
-                    <p>ابحث عن آيات القرآن الكريم بسهولة</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <i data-feather="bookmark" class="w-8 h-8 mb-4 text-green-400 mx-auto"></i>
-                    <h3 class="text-xl font-bold mb-2">تفسير</h3>
-                    <p>تفسير القرآن الكريم بأسلوب مبسط</p>
-                </div>
-            </div>
-        </div>
-        <!-- Athkar Section -->
-        <div id="athkar" class="bg-blue-900 bg-opacity-30 rounded-xl p-8 mb-16" data-aos="fade-up">
-            <h2 class="text-3xl font-bold mb-6 text-center text-yellow-400">أذكار المسلم</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <i data-feather="sun" class="w-8 h-8 mb-4 text-blue-400 mx-auto"></i>
-                    <h3 class="text-xl font-bold mb-2">أذكار الصباح</h3>
-                    <p>أذكار الصباح كاملة مكتوبة ومسموعة</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <i data-feather="moon" class="w-8 h-8 mb-4 text-blue-400 mx-auto"></i>
-                    <h3 class="text-xl font-bold mb-2">أذكار المساء</h3>
-                    <p>أذكار المساء كاملة مكتوبة ومسموعة</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                    <i data-feather="clock" class="w-8 h-8 mb-4 text-blue-400 mx-auto"></i>
-                    <h3 class="text-xl font-bold mb-2">أذكار اليوم والليلة</h3>
-                    <p>مجموعة من الأذكار المتنوعة</p>
-                </div>
-            </div>
-        </div>
-        <!-- Why Section -->
-        <div class="bg-blue-900 bg-opacity-30 rounded-xl p-8 text-center" data-aos="zoom-in">
-            <h2 class="text-3xl font-bold mb-6 text-yellow-400">لماذا اخترت اسم "KING ABDO"؟</h2>
-            <p class="text-xl max-w-3xl mx-auto">"أحب أن أكون مصدر ثقة ومساعدة للآخرين، لذا اخترت لقب KING ABDO كرمز للقيادة في مجال التكنولوجيا!"  👊</p>
-        </div>
+<body>
+
+  <div class="blur">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <div class="logo-badge">👑</div>
+        <span>KING ABDO</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#search">البحث</a>
+        <a href="#quran">القرآن</a>
+        <a href="#azkar">الأذكار</a>
+        <a href="#about">نبذة عني</a>
+      </nav>
     </div>
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>© 2023 KING ABDO. جميع الحقوق محفوظة.</p>
-            <div class="flex justify-center space-x-4 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white"><i data-feather="github"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
-            </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-wrap">
+        <div class="hero-text reveal">
+          <h1>واجهة جديدة كليًا<br> لنفس الهدف ولكن بشكل <span>أقوى وأفخم</span></h1>
+          <p>
+            هذا التصميم يجمع بين البحث السريع بالعربية والإنجليزية، الوصول إلى القرآن الكريم،
+            قراءة الأذكار، وعرض نبذة شخصية عنك، وكل ذلك داخل واجهة حديثة ومريحة وسريعة.
+          </p>
+          <div class="hero-actions">
+            <a href="#search" class="btn btn-primary">ابدأ البحث الآن</a>
+            <a href="#quran" class="btn btn-outline">اذهب إلى القرآن</a>
+          </div>
         </div>
-    </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                once: true
-            });
-            feather.replace();
-            // Fix RTL issues
-            document.querySelectorAll('input').forEach(input => {
-                input.style.textAlign = 'right';
-                input.style.direction = 'rtl';
-            });
 
-            // Bing Search Integration
-            const searchInput = document.getElementById('search-input');
-            const searchButton = document.getElementById('search-button');
+        <div class="hero-card reveal">
+          <h2 style="margin-bottom:10px;">لماذا هذا التصميم أفضل؟</h2>
+          <p style="color:var(--muted); line-height:1.9;">
+            تم تغيير الشكل بالكامل: ألوان حديثة، بطاقات زجاجية، أقسام واضحة،
+            وتحسين تجربة المستخدم على الهاتف والكمبيوتر.
+          </p>
 
-            if (searchButton && searchInput) {
-                searchButton.addEventListener('click', function() {
-                    const query = searchInput.value.trim();
-                    if (query) {
-                        const bingUrl = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
-                        window.open(bingUrl, '_blank');
-                    } else {
-                        alert('يرجى إدخال كلمة للبحث عنها.');
-                    }
-                });
+          <div class="mini-stats">
+            <div class="stat">
+              <h3>بحث سريع</h3>
+              <p>يدعم العربية والإنجليزية مع أكثر من محرك.</p>
+            </div>
+            <div class="stat">
+              <h3>واجهة راقية</h3>
+              <p>تصميم عصري مختلف تمامًا عن الشكل القديم.</p>
+            </div>
+            <div class="stat">
+              <h3>أقسام منظمة</h3>
+              <p>القرآن، الأذكار، والنبذة كلها واضحة وسهلة.</p>
+            </div>
+            <div class="stat">
+              <h3>متجاوب</h3>
+              <p>يعمل بشكل ممتاز على الجوال والتابلت والكمبيوتر.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchButton.click();
-                    }
-                });
-            }
-        });
-    </script>
+    <section class="section" id="search">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>محرك البحث</h2>
+          <p>ابحث بالعربية أو بالإنجليزية، واختر محرك البحث الذي يناسبك.</p>
+        </div>
+
+        <div class="glass search-box reveal">
+          <form class="search-form" id="searchForm">
+            <input
+              id="searchInput"
+              class="input"
+              type="text"
+              placeholder="اكتب ما تريد البحث عنه..."
+              required
+            />
+
+            <select id="engine" class="select">
+              <option value="google">Google</option>
+              <option value="bing">Bing</option>
+              <option value="duck">DuckDuckGo</option>
+              <option value="youtube">YouTube</option>
+            </select>
+
+            <button class="btn btn-primary" type="submit">بحث</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>أقسام الموقع</h2>
+          <p>نفس الفكرة الأساسية لكن بتنظيم أجمل وتجربة استخدام أفضل بكثير.</p>
+        </div>
+
+        <div class="grid reveal">
+          <div class="card">
+            <div class="icon">🔎</div>
+            <h3>بحث ذكي</h3>
+            <p>قسم مخصص للبحث السريع مع واجهة أنيقة وواضحة وسهلة الاستخدام.</p>
+            <a href="#search">افتح قسم البحث</a>
+          </div>
+
+          <div class="card">
+            <div class="icon">📖</div>
+            <h3>القرآن الكريم</h3>
+            <p>إمكانية الانتقال السريع لصفحات القرآن أو الاستماع المباشر للراديو.</p>
+            <a href="#quran">اذهب إلى القرآن</a>
+          </div>
+
+          <div class="card">
+            <div class="icon">🤲</div>
+            <h3>الأذكار</h3>
+            <p>قسم مرتب للأذكار اليومية الأساسية بتصميم مريح وسهل القراءة.</p>
+            <a href="#azkar">عرض الأذكار</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quran">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>القرآن الكريم</h2>
+          <p>قسم مخصص للوصول السريع إلى القراءة والاستماع.</p>
+        </div>
+
+        <div class="quran-layout reveal">
+          <div class="glass" style="padding:24px;">
+            <h3 style="margin-bottom:10px;">روابط سريعة</h3>
+            <p style="color:var(--muted); line-height:1.9;">
+              يمكنك تعديل هذه الروابط لاحقًا ووضع أي مصادر تريدها.
+            </p>
+
+            <div class="list">
+              <a href="https://a181-coder.github.io/QURAN-S-HOME/" target="_blank">📖 قراءة القرآن الكريم</a>
+              <a href="https://a181-coder.github.io/QURAN-S-HOME/" target="_blank">🎧 إذاعة القرآن الكريم</a>
+              <a href="https://a181-coder.github.io/QURAN-S-HOME/" target="_blank">🕌 تصفح السور</a>
+            </div>
+          </div>
+
+          <div class="glass" style="padding:24px;">
+            <h3 style="margin-bottom:10px;">ميزة هذا القسم</h3>
+            <p style="color:var(--muted); line-height:2;">
+              تم تصميم هذا الجزء بشكل هادئ ومميز ليسهّل على الزائر الوصول للقرآن بسرعة،
+              سواء كان يريد القراءة أو الاستماع أو الانتقال بين السور.
+            </p>
+            <div style="margin-top:18px;">
+              <a href="https://quran.com/ar" class="btn btn-primary" target="_blank">افتح القرآن الآن</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="azkar">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>الأذكار</h2>
+          <p>نماذج مرتبة للأذكار الأساسية، ويمكنك زيادة المحتوى لاحقًا كما تريد.</p>
+        </div>
+
+        <div class="azkar reveal">
+          <details open>
+            <summary>أذكار الصباح</summary>
+            <p>
+              اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور.
+              أصبحنا وأصبح الملك لله والحمد لله.
+            </p>
+          </details>
+
+          <details>
+            <summary>أذكار المساء</summary>
+            <p>
+              اللهم بك أمسينا وبك أصبحنا وبك نحيا وبك نموت وإليك المصير.
+              أمسينا وأمسى الملك لله رب العالمين.
+            </p>
+          </details>
+
+          <details>
+            <summary>ذكر بعد الصلاة</summary>
+            <p>
+              أستغفر الله، أستغفر الله، أستغفر الله.
+              اللهم أنت السلام ومنك السلام تباركت يا ذا الجلال والإكرام.
+            </p>
+          </details>
+
+          <details>
+            <summary>أذكار النوم</summary>
+            <p>
+              باسمك ربي وضعت جنبي وبك أرفعه، إن أمسكت نفسي فارحمها،
+              وإن أرسلتها فاحفظها بما تحفظ به عبادك الصالحين.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>نبذة عني</h2>
+          <p>مكان مناسب لعرض تعريف مختصر عن صاحب الموقع.</p>
+        </div>
+
+        <div class="about reveal">
+          <div class="about-box">
+            <div>
+              <h3>KING ABDO</h3>
+              <p style="color:var(--muted); line-height:1.9;">
+                يمكنك هنا وضع اسمك، وصفك المختصر، أو أي رسالة ترحيبية مميزة.
+              </p>
+            </div>
+          </div>
+
+          <div class="glass about-text" style="padding:24px;">
+            <p>
+              مرحبًا بك في موقعي الشخصي. هذا الموقع صُمم ليكون بوابة بسيطة وأنيقة
+              تجمع بين الفائدة والتصميم الحديث، بحيث يستطيع الزائر الوصول بسرعة إلى
+              البحث، القرآن الكريم، والأذكار اليومية.
+            </p>
+
+            <p>
+              يمكنك تعديل هذا النص ووضع معلوماتك الحقيقية، مثل اسمك، اهتماماتك،
+              هدف الموقع، أو حتى إضافة روابط لحساباتك.
+            </p>
+
+            <a href="#home" class="btn btn-outline">الرجوع للأعلى</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-line"></div>
+      <p>© 2026 KING ABDO - تصميم جديد بالكامل لنفس الهدف</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("searchForm");
+    const input = document.getElementById("searchInput");
+    const engine = document.getElementById("engine");
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const q = input.value.trim();
+      if(!q) return;
+
+      let url = "";
+
+      switch(engine.value){
+        case "google":
+          url = "https://www.google.com/search?q=" + encodeURIComponent(q);
+          break;
+        case "bing":
+          url = "https://www.bing.com/search?q=" + encodeURIComponent(q);
+          break;
+        case "duck":
+          url = "https://duckduckgo.com/?q=" + encodeURIComponent(q);
+          break;
+        case "youtube":
+          url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(q);
+          break;
+      }
+
+      window.open(url, "_blank");
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
