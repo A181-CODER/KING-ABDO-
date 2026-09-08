@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-< src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style>
   :root {
     --emerald: #10b981;
@@ -436,20 +436,20 @@
 
         <!-- Stats -->
         <div class="reveal reveal-delay-4 mt-12 grid grid-cols-3 gap-6 max-w-md">
-  <div>
-
-    <div data-target="114" class="stat-num text-3xl font-black">114</div>
-    <div class="text-xs text-gray-500 mt-1">سورة قرآنية</div>
-  </div>
-  <div>
-    <div class="stat-num text-3xl font-black" data-target="6">6</div>
-    <div class="text-xs text-gray-500 mt-1">محركات بحث</div>
-  </div>
-  <div>
-    <div class="stat-num text-3xl font-black" data-target="100">100</div>
-    <div class="text-xs text-gray-500 mt-1">% مجاني</div>
-  </div>
-</div>
+          <div>
+            <div class="stat-num text-3xl font-black" data-target="114"></div>
+            <div class="text-xs text-gray-500 mt-1">سورة قرآنية</div>
+          </div>
+          <div>
+            <div class="stat-num text-3xl font-black" data-target="6"></div>
+            <div class="text-xs text-gray-500 mt-1">محركات بحث</div>
+          </div>
+          <div>
+            <div class="stat-num text-3xl font-black" data-target="100"></div>
+            <div class="text-xs text-gray-500 mt-1">% مجاني</div>
+          </div>
+        </div>
+      </div>
 
       <!-- Hero Visual -->
       <div class="lg:col-span-5 relative reveal reveal-delay-2">
@@ -1252,7 +1252,7 @@
         const interval = setInterval(() => {
           current += step;
           if (current >= target) { current = target; clearInterval(interval); }
-          el.textContent = current + (target === 100 ? '%' : '+');
+          el.textContent = current + (target === 100 ? '%' : '');
         }, 30);
         counterIO.unobserve(el);
       }
