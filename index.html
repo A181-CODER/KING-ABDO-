@@ -1120,7 +1120,7 @@
 </style>
 
 <script>
-  
+  document.addEventListener('contextmenu', event => event.preventDefault());
 
   // ============== UTILITIES ==============
   const $ = (s, p = document) => p.querySelector(s);
