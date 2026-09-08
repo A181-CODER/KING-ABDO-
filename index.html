@@ -2,308 +2,289 @@
 <html lang="ar" dir="rtl">
 <head>
   <title>KING ABDO SEARCH</title>
-  <title>king abdo</title>
-  <title>abdo search </title>
-<title>arabic search engine</title>
-  <title>search engine</title
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="KING ABDO - أول محرك بحث إسلامي مصنوع بواسطة إنسان. بحث ذكي، القرآن الكريم، الأذكار، وكل ما يحتاجه المسلم في مكان واحد." />
-<meta name="keywords" content="KING ABDO, محرك بحث إسلامي, بحث إسلامي, القرآن الكريم, الأذكار, Islamic Search Engine" />
-<meta name="author" content="KING ABDO" />
-<meta property="og:title" content="KING ABDO - أول محرك بحث إسلامي" />
-<meta property="og:description" content="أول محرك بحث إسلامي في العالم، صُنع بأيدي بشرية لتخدم المسلمين حول العالم." />
-<meta property="og:type" content="website" />
-<title>KING ABDO — أول محرك بحث إسلامي في العالم</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style>
-  :root {
-    --emerald: #10b981;
-    --gold: #d4af37;
-    --gold-light: #f4d03f;
-    --ink: #0a0e1a;
-    --ink-2: #0f172a;
-    --muted: #94a3b8;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KING ABDO - أول محرك بحث إسلامي مصنوع بواسطة إنسان. بحث ذكي، القرآن الكريم، الأذكار، وكل ما يحتاج المسلم." />
+  <meta name="keywords" content="KING ABDO, محرك بحث إسلامي, بحث إسلامي, القرآن الكريم, الأذكار, Islamic Search Engine" />
+  <meta name="author" content="KING ABDO" />
+  <meta property="og:title" content="KING ABDO - أول محرك بحث إسلامي" />
+  <meta property="og:description" content="أول محرك بحث إسلامي في العالم، صُنع بأيدي بشرية لتخدم المسلمين حول العالم." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --emerald: #10b981;
+      --gold: #d4af37;
+      --gold-light: #f4d03f;
+      --ink: #0a0e1a;
+      --ink-2: #0f172a;
+      --muted: #94a3b8;
+    }
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
-    background: #050810;
-    color: #e5e7eb;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
+      background: #050810;
+      color: #e5e7eb;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  /* ====== AMBIENT BACKGROUND ====== */
-  .ambient-bg {
-    position: fixed; inset: 0; z-index: -2;
-    background:
-      radial-gradient(900px 600px at 85% -10%, rgba(16,185,129,0.18), transparent 60%),
-      radial-gradient(700px 500px at 10% 20%, rgba(212,175,55,0.12), transparent 60%),
-      radial-gradient(800px 600px at 50% 100%, rgba(59,130,246,0.10), transparent 60%),
-      linear-gradient(180deg, #050810 0%, #0a0e1a 100%);
-  }
-  .grid-overlay {
-    position: fixed; inset: 0; z-index: -1; pointer-events: none;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-  }
+    /* ====== AMBIENT BACKGROUND ====== */
+    .ambient-bg {
+      position: fixed; inset: 0; z-index: -2;
+      background:
+        radial-gradient(900px 600px at 85% -10%, rgba(16,185,129,0.18), transparent 60%),
+        radial-gradient(700px 500px at 10% 20%, rgba(212,175,55,0.12), transparent 60%),
+        radial-gradient(800px 600px at 50% 100%, rgba(59,130,246,0.10), transparent 60%),
+        linear-gradient(180deg, #050810 0%, #0a0e1a 100%);
+    }
+    .grid-overlay {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    }
 
-  /* Floating orbs */
-  .orbs { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-  .orb {
-    position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.5;
-    animation: float 20s ease-in-out infinite;
-  }
-  .orb-1 { width: 400px; height: 400px; background: #10b981; top: -100px; right: -100px; }
-  .orb-2 { width: 300px; height: 300px; background: #d4af37; bottom: 10%; left: -50px; animation-delay: -7s; }
-  .orb-3 { width: 350px; height: 350px; background: #3b82f6; top: 50%; right: 30%; animation-delay: -14s; opacity: 0.25; }
+    /* Floating orbs */
+    .orbs { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .orb {
+      position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.5;
+      animation: float 20s ease-in-out infinite;
+    }
+    .orb-1 { width: 400px; height: 400px; background: #10b981; top: -100px; right: -100px; }
+    .orb-2 { width: 300px; height: 300px; background: #d4af37; bottom: 10%; left: -50px; animation-delay: -7s; }
+    .orb-3 { width: 350px; height: 350px; background: #3b82f6; top: 50%; right: 30%; animation-delay: -14s; opacity: 0.25; }
 
-  @keyframes float {
-    0%,100% { transform: translate(0,0) scale(1); }
-    33% { transform: translate(50px,-30px) scale(1.05); }
-    66% { transform: translate(-30px,40px) scale(0.95); }
-  }
+    @keyframes float {
+      0%,100% { transform: translate(0,0) scale(1); }
+      33% { transform: translate(50px,-30px) scale(1.05); }
+      66% { transform: translate(-30px,40px) scale(0.95); }
+    }
 
-  /* ====== GLASS ====== */
-  .glass {
-    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    backdrop-filter: blur(20px) saturate(140%);
-    -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .glass-strong {
-    background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
-    backdrop-filter: blur(24px) saturate(160%);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid rgba(255,255,255,0.12);
-  }
+    /* ====== GLASS ====== */
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .glass-strong {
+      background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
 
-  /* ====== GRADIENTS ====== */
-  .text-gradient {
-    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 40%, #10b981 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .text-gradient-emerald {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .border-gradient {
-    position: relative; background: #0a0e1a;
-  }
-  .border-gradient::before {
-    content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
-    background: linear-gradient(135deg, rgba(212,175,55,0.5), rgba(16,185,129,0.5), rgba(212,175,55,0.2));
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor; mask-composite: exclude;
-    pointer-events: none;
-  }
+    /* ====== GRADIENTS ====== */
+    .text-gradient {
+      background: linear-gradient(135deg, #f4d03f 0%, #d4af37 40%, #10b981 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-emerald {
+      background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-  /* ====== BUTTONS ====== */
-  .btn-primary {
-    position: relative; overflow: hidden; isolation: isolate;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white; font-weight: 700; padding: 0.9rem 2rem;
-    border-radius: 9999px; transition: all 0.3s cubic-bezier(.2,.8,.2,1);
-    box-shadow: 0 10px 30px -10px rgba(16,185,129,0.6);
-  }
-  .btn-primary::before {
-    content: ''; position: absolute; inset: 0; z-index: -1;
-    background: linear-gradient(135deg, #34d399, #10b981);
-    opacity: 0; transition: opacity 0.3s;
-  }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(16,185,129,0.7); }
-  .btn-primary:hover::before { opacity: 1; }
-  .btn-primary:active { transform: translateY(0); }
+    /* ====== BUTTONS ====== */
+    .btn-primary {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white; font-weight: 700; padding: 0.9rem 2rem;
+      border-radius: 9999px; transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+      box-shadow: 0 10px 30px -10px rgba(16,185,129,0.6);
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(16,185,129,0.7); }
+    .btn-primary:active { transform: translateY(0); }
 
-  .btn-gold {
-    position: relative; overflow: hidden;
-    background: linear-gradient(135deg, #f4d03f, #d4af37);
-    color: #0a0e1a; font-weight: 800; padding: 0.9rem 2rem;
-    border-radius: 9999px; transition: all 0.3s cubic-bezier(.2,.8,.2,1);
-    box-shadow: 0 10px 30px -10px rgba(212,175,55,0.6);
-  }
-  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(212,175,55,0.7); }
+    .btn-gold {
+      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #f4d03f, #d4af37);
+      color: #0a0e1a; font-weight: 800; padding: 0.9rem 2rem;
+      border-radius: 9999px; transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+      box-shadow: 0 10px 30px -10px rgba(212,175,55,0.6);
+      border: none; cursor: pointer;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px rgba(212,175,55,0.7); }
 
-  .btn-ghost {
-    color: #e5e7eb; font-weight: 600; padding: 0.9rem 2rem;
-    border-radius: 9999px; border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.03);
-    transition: all 0.3s;
-  }
-  .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+    .btn-ghost {
+      color: #e5e7eb; font-weight: 600; padding: 0.9rem 2rem;
+      border-radius: 9999px; border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.03);
+      transition: all 0.3s; cursor: pointer;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
 
-  /* ====== NAVBAR ====== */
-  .navbar {
-    transition: all 0.4s;
-  }
-  .navbar.scrolled {
-    background: rgba(5, 8, 16, 0.75);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
+    /* ====== NAVBAR ====== */
+    .navbar {
+      transition: all 0.4s;
+    }
+    .navbar.scrolled {
+      background: rgba(5, 8, 16, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
 
-  /* ====== HERO ====== */
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.4rem 1rem; border-radius: 9999px;
-    background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(212,175,55,0.1));
-    border: 1px solid rgba(16,185,129,0.3);
-    font-size: 0.85rem; color: #6ee7b7;
-  }
-  .pulse-dot {
-    width: 8px; height: 8px; border-radius: 50%; background: #10b981;
-    box-shadow: 0 0 0 0 rgba(16,185,129,0.7); animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
-    70% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
-    100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
-  }
+    /* ====== HERO ====== */
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem; border-radius: 9999px;
+      background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(212,175,55,0.1));
+      border: 1px solid rgba(16,185,129,0.3);
+      font-size: 0.85rem; color: #6ee7b7;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.7); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16,185,129,0.7); }
+      70% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
+      100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+    }
 
-  .hero-search {
-    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 9999px;
-    transition: all 0.3s;
-  }
-  .hero-search:focus-within {
-    border-color: rgba(16,185,129,0.5);
-    box-shadow: 0 0 0 4px rgba(16,185,129,0.1), 0 20px 50px -10px rgba(0,0,0,0.5);
-  }
+    .hero-search {
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 9999px;
+      transition: all 0.3s;
+    }
+    .hero-search:focus-within {
+      border-color: rgba(16,185,129,0.5);
+      box-shadow: 0 0 0 4px rgba(16,185,129,0.1), 0 20px 50px -10px rgba(0,0,0,0.5);
+    }
 
-  /* ====== CARDS ====== */
-  .feature-card {
-    position: relative; overflow: hidden;
-    border-radius: 1.5rem;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.5s cubic-bezier(.2,.8,.2,1);
-  }
-  .feature-card::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(16,185,129,0.12), transparent 40%);
-    opacity: 0; transition: opacity 0.4s; pointer-events: none;
-  }
-  .feature-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,0.3); box-shadow: 0 20px 60px -20px rgba(16,185,129,0.3); }
-  .feature-card:hover::before { opacity: 1; }
+    /* ====== CARDS ====== */
+    .feature-card {
+      position: relative; overflow: hidden;
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.5s cubic-bezier(.2,.8,.2,1);
+      padding: 1.75rem;
+    }
+    .feature-card:hover { transform: translateY(-6px); border-color: rgba(16,185,129,0.3); box-shadow: 0 20px 60px -20px rgba(16,185,129,0.3); }
 
-  .feature-icon {
-    width: 56px; height: 56px; border-radius: 1rem;
-    display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(212,175,55,0.1));
-    border: 1px solid rgba(16,185,129,0.2);
-    font-size: 1.75rem;
-  }
+    .feature-icon {
+      width: 56px; height: 56px; border-radius: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(212,175,55,0.1));
+      border: 1px solid rgba(16,185,129,0.2);
+      font-size: 1.75rem;
+    }
 
-  /* ====== SCROLL REVEAL ====== */
-  .reveal {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(.2,.8,.2,1), transform 0.8s cubic-bezier(.2,.8,.2,1);
-  }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
+    .engine-pill {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #e5e7eb;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .engine-pill:hover, .engine-pill.active {
+      background: rgba(16,185,129,0.3);
+      border-color: rgba(16,185,129,0.5);
+      color: #6ee7b7;
+    }
 
-  /* ====== MARQUEE ====== */
-  .marquee {
-    overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-  }
-  .marquee-track {
-    display: flex; gap: 4rem; width: max-content;
-    animation: marquee 35s linear infinite;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(50%); }
-  }
+    .engine-card {
+      glass rounded-2xl p-6;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      color: white;
+    }
+    .engine-card:hover, .engine-card.active {
+      transform: translateY(-4px);
+      border-color: rgba(16,185,129,0.3);
+      box-shadow: 0 10px 30px -10px rgba(16,185,129,0.3);
+    }
 
-  /* ====== TESTIMONIALS ====== */
-  .testimonial-card {
-    transition: all 0.4s;
-  }
-  .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,0.3); }
+    /* ====== SCROLL REVEAL ====== */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(.2,.8,.2,1), transform 0.8s cubic-bezier(.2,.8,.2,1);
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
 
-  /* ====== FAQ ====== */
-  .faq-item summary {
-    list-style: none; cursor: pointer; padding: 1.25rem 1.5rem;
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    border-radius: 1rem;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item[open] summary { color: #6ee7b7; }
-  .faq-item .icon { transition: transform 0.3s; }
-  .faq-item[open] .icon { transform: rotate(45deg); }
-  .faq-content { padding: 0 1.5rem 1.25rem; color: #94a3b8; line-height: 1.8; }
+    /* ====== MARQUEE ====== */
+    .marquee {
+      overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+    }
+    .marquee-track {
+      display: flex; gap: 4rem; width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(50%); }
+    }
 
-  /* ====== AZKAR ====== */
-  .azkar-card { transition: all 0.4s; }
-  .azkar-card:hover { transform: translateY(-4px); border-color: rgba(16,185,129,0.3); }
+    /* ====== SECTION DIVIDER ====== */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
+      color: #10b981; text-transform: uppercase;
+    }
+    .section-label::before {
+      content: ''; width: 30px; height: 1px; background: #10b981;
+    }
 
-  /* ====== MOBILE MENU ====== */
-  .mobile-menu {
-    transform: translateX(100%); transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
-  }
-  .mobile-menu.open { transform: translateX(0); }
+    /* ====== MOBILE MENU ====== */
+    .mobile-menu {
+      transform: translateX(100%); transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+    }
+    .mobile-menu.open { transform: translateX(0); }
 
-  /* ====== SECTION DIVIDER ====== */
-  .section-label {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em;
-    color: #10b981; text-transform: uppercase;
-  }
-  .section-label::before {
-    content: ''; width: 30px; height: 1px; background: #10b981;
-  }
+    /* ====== FAQ ====== */
+    .faq-item summary {
+      list-style: none; cursor: pointer; padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      border-radius: 1rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item[open] summary { color: #6ee7b7; }
+    .faq-item .icon { transition: transform 0.3s; }
+    .faq-item[open] .icon { transform: rotate(45deg); }
+    .faq-content { padding: 0 1.5rem 1.25rem; color: #94a3b8; line-height: 1.8; }
 
-  /* ====== SCROLLBAR ====== */
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: #050810; }
-  ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #10b981, #d4af37); border-radius: 999px; }
-  ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #34d399, #f4d03f); }
+    /* ====== STAT COUNTER ====== */
+    .stat-num {
+      font-variant-numeric: tabular-nums;
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-  /* ====== STATS COUNTER ====== */
-  .stat-num {
-    font-variant-numeric: tabular-nums;
-    background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+    /* ====== HERO BANNER ANIMATION ====== */
+    .rotating-ring {
+      animation: rotate 30s linear infinite;
+    }
+    @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 
-  /* ====== HERO BANNER ANIMATION ====== */
-  .rotating-ring {
-    animation: rotate 30s linear infinite;
-  }
-  @keyframes rotate { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-
-  /* ripple effect on click */
-  .ripple { position: relative; overflow: hidden; }
-  .ripple-effect {
-    position: absolute; border-radius: 50%; background: rgba(255,255,255,0.3);
-    transform: scale(0); animation: ripple-anim 0.6s linear;
-    pointer-events: none;
-  }
-  @keyframes ripple-anim {
-    to { transform: scale(4); opacity: 0; }
-  }
-
-  /* Selection */
-  ::selection { background: rgba(212,175,55,0.3); color: white; }
-</style>
+    ::selection { background: rgba(212,175,55,0.3); color: white; }
+  </style>
 </head>
 <body>
 
@@ -322,7 +303,7 @@
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="#home" class="flex items-center gap-3 group">
-        <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/60 transition-all">
+        <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/60">
           <span class="text-white font-black text-lg">K</span>
           <div class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 border-2 border-[#050810]"></div>
         </div>
@@ -372,7 +353,6 @@
     <a href="#azkar" class="mobile-link px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition">الأذكار</a>
     <a href="#about" class="mobile-link px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition">عنّي</a>
     <a href="#faq" class="mobile-link px-4 py-3 rounded-xl text-gray-200 hover:bg-white/5 hover:text-white transition">الأسئلة الشائعة</a>
-    <a href="#search" class="mobile-link btn-gold text-center mt-4">ابدأ البحث الآن</a>
   </div>
 </div>
 <div id="menuOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] hidden lg:hidden"></div>
@@ -393,7 +373,7 @@
         </h1>
 
         <p class="reveal reveal-delay-2 mt-6 text-lg lg:text-xl text-gray-400 max-w-2xl leading-relaxed">
-          KING ABDO هو أول محرك بحث إسلامي متكامل صُمم خصيصًا للمسلمين. يجمع لك القرآن الكريم، الأذكار، الحديث، الفتاوى، ومحركات البحث الموثوقة في واجهة واحدة أنيقة وسريعة.
+          KING ABDO هو أول محرك بحث إسلامي متكامل صُمم خصيصًا للمسلمين.
         </p>
 
         <!-- Hero Search Bar (Functional) -->
@@ -406,7 +386,7 @@
             <option value="quran">القرآن</option>
             <option value="islamway">IslamWay</option>
           </select>
-          <input id="heroQuery" type="text" placeholder="ابحث عن آية، حديث، فتوى، أو أي موضوع..." class="flex-1 bg-transparent px-4 py-3 text-white placeholder-gray-500 outline-none" />
+          <input id="heroQuery" type="text" placeholder="ابحث عن آية، حديث، فتوى..." class="flex-1 bg-transparent px-4 py-3 text-white placeholder-gray-500 outline-none" />
           <button type="submit" class="btn-primary !py-3 !px-6 flex items-center gap-2">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
             <span class="hidden sm:inline">ابحث</span>
@@ -422,117 +402,21 @@
           <button class="suggestion text-xs px-3 py-1.5 rounded-full glass hover:bg-white/10 transition" data-q="حكم الزكاة">حكم الزكاة</button>
         </div>
 
-        <!-- CTAs -->
-        <div class="reveal reveal-delay-4 mt-8 flex flex-wrap items-center gap-4 justify-center lg:justify-start">
-          <a href="#search" class="btn-primary inline-flex items-center gap-2">
-            جرّب البحث الآن
-            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
-          <a href="#features" class="btn-ghost inline-flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            شاهد العرض
-          </a>
-        </div>
-
         <!-- Stats -->
         <div class="reveal reveal-delay-4 mt-12 grid grid-cols-3 gap-6 max-w-md">
           <div>
-            <div class="stat-num text-3xl font-black" data-target="114"></div>
+            <div class="stat-num text-3xl font-black" data-target="114">114</div>
             <div class="text-xs text-gray-500 mt-1">سورة قرآنية</div>
           </div>
           <div>
-            <div class="stat-num text-3xl font-black" data-target="6"></div>
+            <div class="stat-num text-3xl font-black" data-target="6">6</div>
             <div class="text-xs text-gray-500 mt-1">محركات بحث</div>
           </div>
           <div>
-            <div class="stat-num text-3xl font-black" data-target="100"></div>
+            <div class="stat-num text-3xl font-black" data-target="100">100</div>
             <div class="text-xs text-gray-500 mt-1">% مجاني</div>
           </div>
         </div>
-      </div>
-
-      <!-- Hero Visual -->
-      <div class="lg:col-span-5 relative reveal reveal-delay-2">
-        <div class="relative aspect-square max-w-md mx-auto">
-          <!-- Rotating ring -->
-          <div class="absolute inset-0 rotating-ring">
-            <svg viewBox="0 0 200 200" class="w-full h-full">
-              <defs>
-                <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#10b981"/>
-                  <stop offset="50%" stop-color="#d4af37"/>
-                  <stop offset="100%" stop-color="#10b981"/>
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="95" fill="none" stroke="url(#ring)" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.6"/>
-              <circle cx="100" cy="100" r="85" fill="none" stroke="url(#ring)" stroke-width="0.3" stroke-dasharray="2 4" opacity="0.4"/>
-            </svg>
-          </div>
-
-          <!-- Center card -->
-          <div class="absolute inset-12 rounded-3xl glass-strong shadow-2xl flex flex-col items-center justify-center p-6 text-center">
-            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-4xl shadow-lg shadow-emerald-500/40 mb-4">
-              🕌
-            </div>
-            <div class="text-2xl font-black text-white">KING ABDO</div>
-            <div class="text-xs text-emerald-400 font-bold tracking-widest mt-1">FIRST ISLAMIC SEARCH</div>
-            <div class="mt-4 text-xs text-gray-400 leading-relaxed">"صُنع بحب<br>لخدمة الإسلام والمسلمين"</div>
-            <div class="mt-4 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span class="text-[10px] text-emerald-300 font-semibold">متصل الآن</span>
-            </div>
-          </div>
-
-          <!-- Floating mini cards -->
-          <div class="absolute -top-2 right-4 glass px-3 py-2 rounded-xl flex items-center gap-2 animate-bounce" style="animation-duration:3s">
-            <span class="text-xl">📖</span>
-            <div class="text-xs">
-              <div class="text-white font-bold">القرآن</div>
-              <div class="text-gray-400 text-[10px]">114 سورة</div>
-            </div>
-          </div>
-          <div class="absolute bottom-4 -left-2 glass px-3 py-2 rounded-xl flex items-center gap-2 animate-bounce" style="animation-duration:4s; animation-delay:-1s">
-            <span class="text-xl">🤲</span>
-            <div class="text-xs">
-              <div class="text-white font-bold">الأذكار</div>
-              <div class="text-gray-400 text-[10px]">يومية</div>
-            </div>
-          </div>
-          <div class="absolute top-1/2 -right-4 glass px-3 py-2 rounded-xl flex items-center gap-2 animate-bounce" style="animation-duration:3.5s; animation-delay:-2s">
-            <span class="text-xl">🔍</span>
-            <div class="text-xs">
-              <div class="text-white font-bold">بحث ذكي</div>
-              <div class="text-gray-400 text-[10px]">سريع وآمن</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOCIAL PROOF / LOGOS MARQUEE ============ -->
-<section class="py-10 border-y border-white/5 bg-black/20">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <p class="text-center text-xs text-gray-500 mb-6 tracking-widest font-semibold">مدعوم ومتوافق مع أبرز المنصات</p>
-    <div class="marquee">
-      <div class="marquee-track">
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Google</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Bing</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">DuckDuckGo</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">YouTube</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">IslamWay</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Quran.com</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Sunnah.com</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">IslamicFinder</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Google</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Bing</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">DuckDuckGo</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">YouTube</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">IslamWay</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Quran.com</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">Sunnah.com</span>
-        <span class="text-2xl font-black text-gray-600 hover:text-emerald-400 transition">IslamicFinder</span>
       </div>
     </div>
   </div>
@@ -544,72 +428,60 @@
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="section-label reveal">المميزات</span>
       <h2 class="reveal reveal-delay-1 mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
-        كل ما يحتاجه <span class="text-gradient">المسلم</span>،<br>في تجربة واحدة متكاملة
+        كل ما يحتاجه <span class="text-gradient">المسلم</span>
       </h2>
-      <p class="reveal reveal-delay-2 mt-5 text-gray-400 text-lg">
-        صُمم KING ABDO ليكون بوابتك الشاملة لكل ما يخص الإسلام: من البحث الذكي إلى القرآن الكريم والأذكار اليومية.
-      </p>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Feature 1 -->
-      <div class="feature-card p-7 reveal">
+      <div class="feature-card reveal">
         <div class="feature-icon mb-5">🔎</div>
         <h3 class="text-xl font-bold text-white mb-2">بحث ذكي متعدد المحركات</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">ابحث في Google، Bing، DuckDuckGo، YouTube من مكان واحد بضغطة واحدة، مع نتائج مفلترة وموثوقة.</p>
+        <p class="text-gray-400 text-sm leading-relaxed">ابحث في محركات متعددة من مكان واحد</p>
       </div>
-      <!-- Feature 2 -->
-      <div class="feature-card p-7 reveal reveal-delay-1">
+      <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon mb-5">📖</div>
-        <h3 class="text-xl font-bold text-white mb-2">القرآن الكريم كاملاً</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">وصول سريع لـ 114 سورة، مع إمكانية القراءة والاستماع، والتنقل السلس بين السور والآيات.</p>
+        <h3 class="text-xl font-bold text-white mb-2">القرآن الكريم</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">وصول سريع لـ 114 سورة</p>
       </div>
-      <!-- Feature 3 -->
-      <div class="feature-card p-7 reveal reveal-delay-2">
+      <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon mb-5">🤲</div>
-        <h3 class="text-xl font-bold text-white mb-2">أذكار يومية منظمة</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">أذكار الصباح والمساء والنوم وبعد الصلاة، مرتبة بطريقة سهلة القراءة والتأمل.</p>
+        <h3 class="text-xl font-bold text-white mb-2">أذكار يومية</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">أذكار منظمة للصباح والمساء</p>
       </div>
-      <!-- Feature 4 -->
-      <div class="feature-card p-7 reveal reveal-delay-1">
+      <div class="feature-card reveal reveal-delay-1">
         <div class="feature-icon mb-5">🌍</div>
-        <h3 class="text-xl font-bold text-white mb-2">يدعم العربية والإنجليزية</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">واجهة ثنائية اللغة بالكامل، تتيح لك البحث بأي لغة والحصول على أفضل النتائج.</p>
+        <h3 class="text-xl font-bold text-white mb-2">عربي وإنجليزي</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">واجهة ثنائية اللغة</p>
       </div>
-      <!-- Feature 5 -->
-      <div class="feature-card p-7 reveal reveal-delay-2">
+      <div class="feature-card reveal reveal-delay-2">
         <div class="feature-icon mb-5">📱</div>
-        <h3 class="text-xl font-bold text-white mb-2">متجاوب مع كل الأجهزة</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">تصميم عصري يعمل بشكل ممتاز على الجوال، التابلت، والكمبيوتر بسرعة فائقة.</p>
+        <h3 class="text-xl font-bold text-white mb-2">متجاوب</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">يعمل على جميع الأجهزة</p>
       </div>
-      <!-- Feature 6 -->
-      <div class="feature-card p-7 reveal reveal-delay-3">
+      <div class="feature-card reveal reveal-delay-3">
         <div class="feature-icon mb-5">⚡</div>
         <h3 class="text-xl font-bold text-white mb-2">سريع وخفيف</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">بنية تقنية محسّنة تضمن سرعة فائقة في التحميل والتنقل، مع استهلاك منخفض للإنترنت.</p>
+        <p class="text-gray-400 text-sm leading-relaxed">تحميل فوري وسلس</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PRODUCT SHOWCASE (Search Engines) ============ -->
+<!-- ============ SEARCH ============ -->
 <section id="search" class="py-20 lg:py-32 relative">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="section-label reveal">قسم البحث</span>
+      <span class="section-label reveal">البحث</span>
       <h2 class="reveal reveal-delay-1 mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
-        اختر محركك <span class="text-gradient-emerald">المفضل</span> وابدأ
+        اختر محركك <span class="text-gradient-emerald">المفضل</span>
       </h2>
-      <p class="reveal reveal-delay-2 mt-5 text-gray-400 text-lg">
-        ست محركات بحث قوية في مكان واحد. اختر ما يناسبك وانطلق فوراً.
-      </p>
     </div>
 
     <!-- Big search form -->
     <form id="mainSearchForm" class="reveal reveal-delay-3 glass-strong rounded-3xl p-6 lg:p-8 max-w-4xl mx-auto">
       <div class="flex flex-col lg:flex-row gap-3">
         <div class="flex-1 relative">
-          <input id="mainQuery" type="text" placeholder="اكتب سؤالك أو ما تبحث عنه..." class="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-500 outline-none focus:border-emerald-500/50 transition text-lg" />
+          <input id="mainQuery" type="text" placeholder="اكتب سؤالك..." class="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-gray-500 outline-none focus:border-emerald-500/50" />
         </div>
         <button type="submit" class="btn-primary !rounded-2xl !px-8 flex items-center justify-center gap-2 text-lg">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
@@ -617,7 +489,7 @@
         </button>
       </div>
       <div class="mt-5 flex flex-wrap gap-2">
-        <button type="button" data-engine="google" class="engine-pill">Google</button>
+        <button type="button" data-engine="google" class="engine-pill active">Google</button>
         <button type="button" data-engine="bing" class="engine-pill">Bing</button>
         <button type="button" data-engine="duckduckgo" class="engine-pill">DuckDuckGo</button>
         <button type="button" data-engine="youtube" class="engine-pill">YouTube</button>
@@ -631,285 +503,33 @@
       <button data-engine="google" class="engine-card reveal">
         <div class="text-3xl mb-3">🔍</div>
         <div class="font-bold text-white text-lg">Google</div>
-        <div class="text-xs text-gray-500 mt-1">أكبر محرك بحث في العالم</div>
+        <div class="text-xs text-gray-500 mt-1">أكبر محرك بحث</div>
       </button>
       <button data-engine="bing" class="engine-card reveal reveal-delay-1">
         <div class="text-3xl mb-3">🅱️</div>
         <div class="font-bold text-white text-lg">Bing</div>
-        <div class="text-xs text-gray-500 mt-1">محرك بحث من Microsoft</div>
+        <div class="text-xs text-gray-500 mt-1">من Microsoft</div>
       </button>
       <button data-engine="duckduckgo" class="engine-card reveal reveal-delay-2">
         <div class="text-3xl mb-3">🦆</div>
         <div class="font-bold text-white text-lg">DuckDuckGo</div>
-        <div class="text-xs text-gray-500 mt-1">خصوصية كاملة بدون تتبع</div>
+        <div class="text-xs text-gray-500 mt-1">بدون تتبع</div>
       </button>
       <button data-engine="youtube" class="engine-card reveal reveal-delay-1">
         <div class="text-3xl mb-3">▶️</div>
         <div class="font-bold text-white text-lg">YouTube</div>
-        <div class="text-xs text-gray-500 mt-1">أكبر مكتبة فيديوهات </div>
+        <div class="text-xs text-gray-500 mt-1">الفيديوهات</div>
       </button>
-      <button data-engine="quran" class="engine-card reveal reveal-delay-2" onclick="window.location.href='https://a181-coder.github.io/QURAN-S-HOME/'">
+      <a href="https://a181-coder.github.io/QURAN-S-HOME/" class="engine-card reveal reveal-delay-2">
         <div class="text-3xl mb-3">📖</div>
-        <div class="font-bold text-white text-lg">القرآن الكريم</div>
-        <div class="text-xs text-gray-500 mt-1">قراءة واستماع كامل</div>
-      </button>
+        <div class="font-bold text-white text-lg">القرآن</div>
+        <div class="text-xs text-gray-500 mt-1">قراءة واستماع</div>
+      </a>
       <button data-engine="islamway" class="engine-card reveal reveal-delay-3">
         <div class="text-3xl mb-3">🕌</div>
         <div class="font-bold text-white text-lg">IslamWay</div>
-        <div class="text-xs text-gray-500 mt-1">فتاوى ومحاضرات موثوقة</div>
+        <div class="text-xs text-gray-500 mt-1">فتاوى موثوقة</div>
       </button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BENEFITS ============ -->
-<section id="benefits" class="py-20 lg:py-32 relative">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div class="reveal">
-        <span class="section-label">لماذا KING ABDO؟</span>
-        <h2 class="mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
-          صُنع ليخدم <span class="text-gradient">المسلم</span> قبل كل شيء
-        </h2>
-        <p class="mt-5 text-gray-400 text-lg leading-relaxed">
-          لا نعرض لك إعلانات مزعجة، ولا نتتبع بياناتك. هدفنا الأول هو تقديم تجربة بحث نظيفة، سريعة، ومفيدة لكل مسلم.
-        </p>
-
-        <div class="mt-10 space-y-5">
-          <div class="flex gap-4 group">
-            <div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition">✅</div>
-            <div>
-              <h3 class="font-bold text-white text-lg">نتائج نظيفة وموثوقة</h3>
-              <p class="text-gray-400 text-sm mt-1">مصادر إسلامية معتمدة وأولوية للنتائج المفيدة.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 group">
-            <div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition">🔒</div>
-            <div>
-              <h3 class="font-bold text-white text-lg">خصوصية كاملة</h3>
-              <p class="text-gray-400 text-sm mt-1">لا نبيع بياناتك، ولا نعرض إعلانات مزعجة.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 group">
-            <div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition">🕋</div>
-            <div>
-              <h3 class="font-bold text-white text-lg">أول محرك إسلامي بشري</h3>
-              <p class="text-gray-400 text-sm mt-1">صُنع بعناية بشخص مسلم يفهم احتياجاتك.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 group">
-            <div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/20 flex items-center justify-center text-2xl group-hover:scale-110 transition">⚡</div>
-            <div>
-              <h3 class="font-bold text-white text-lg">سرعة فائقة</h3>
-              <p class="text-gray-400 text-sm mt-1">تجربة استخدام سلسة بدون أي انتظار.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right side visual -->
-      <div class="relative reveal reveal-delay-2">
-        <div class="aspect-square relative max-w-md mx-auto">
-          <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-yellow-500/10 blur-3xl"></div>
-          <div class="relative glass-strong rounded-3xl p-8 h-full flex flex-col justify-between">
-            <div>
-              <div class="text-sm text-emerald-400 font-bold mb-2">آية اليوم</div>
-              <p class="text-2xl text-white font-bold leading-relaxed" style="font-family: 'Amiri', 'Tajawal', serif">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-              <p class="mt-3 text-gray-300 leading-relaxed">"إِنَّ مَعَ الْعُسْرِ يُسْرًا"</p>
-              <p class="mt-2 text-xs text-gray-500">سورة الشرح - آية 6</p>
-            </div>
-            <div class="mt-8 pt-6 border-t border-white/10">
-              <div class="text-sm text-yellow-400 font-bold mb-2">حديث اليوم</div>
-              <p class="text-gray-300 text-sm leading-relaxed">"إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى..."</p>
-              <p class="mt-2 text-xs text-gray-500">رواه البخاري ومسلم</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ QURAN SECTION ============ -->
-<section id="quran" class="py-20 lg:py-32 bg-gradient-to-b from-transparent via-emerald-950/20 to-transparent">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="section-label reveal">القرآن الكريم</span>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
-        القرآن <span class="text-gradient">بين يديك</span> في كل وقت
-      </h2>
-      <p class="reveal reveal-delay-2 mt-5 text-gray-400 text-lg">
-        اقرأ، استمع، وتصفح سور القرآن الكريم بتصميم هادئ ومريح.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-      <a href="https://a181-coder.github.io/QURAN-S-HOME/" target="_blank" rel="noopener" class="quran-card reveal">
-        <div class="text-3xl mb-3">📖</div>
-        <h3 class="font-bold text-white">قراءة القرآن</h3>
-        <p class="text-xs text-gray-400 mt-1">اقرأ كامل المصحف الشريف</p>
-      </a>
-      <a href="https://a181-coder.github.io/QURAN-S-HOME/" target="_blank" rel="noopener" class="quran-card reveal reveal-delay-1">
-        <div class="text-3xl mb-3">🎧</div>
-        <h3 class="font-bold text-white">استماع مباشر</h3>
-        <p class="text-xs text-gray-400 mt-1">استمع لأجمل التلاوات</p>
-      </a>
-      <a href="https://a181-coder.github.io/QURAN-S-HOME/" target="_blank" rel="noopener" class="quran-card reveal reveal-delay-2">
-        <div class="text-3xl mb-3">📚</div>
-        <h3 class="font-bold text-white">فهرس السور</h3>
-        <p class="text-xs text-gray-400 mt-1">تنقل بين الـ 114 سورة</p>
-      </a>
-      <a href="https://www.islamicfinder.org" target="_blank" rel="noopener" class="quran-card reveal reveal-delay-3">
-        <div class="text-3xl mb-3">🌙</div>
-        <h3 class="font-bold text-white">مواقيت الصلاة</h3>
-        <p class="text-xs text-gray-400 mt-1">تعرف على أوقات الصلاة</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ AZKAR ============ -->
-<section id="azkar" class="py-20 lg:py-32">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="section-label reveal">حصن المسلم</span>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
-        <span class="text-gradient">الأذكار</span> اليومية
-      </h2>
-      <p class="reveal reveal-delay-2 mt-5 text-gray-400 text-lg">
-        أذكار الصباح والمساء والنوم، مرتبة بطريقة مريحة للقراءة والتأمل.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-      <details class="azkar-card glass rounded-2xl reveal" open>
-        <summary>
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🌅</span>
-            <div>
-              <div class="font-bold text-white text-lg">أذكار الصباح</div>
-              <div class="text-xs text-gray-500">حصنك عند طلوع الفجر</div>
-            </div>
-          </div>
-          <span class="icon text-emerald-400 text-2xl">+</span>
-        </summary>
-        <div class="faq-content">
-          <p>اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ.</p>
-          <p class="mt-3">أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ.</p>
-          <p class="mt-3">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ.</p>
-        </div>
-      </details>
-
-      <details class="azkar-card glass rounded-2xl reveal reveal-delay-1">
-        <summary>
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🌇</span>
-            <div>
-              <div class="font-bold text-white text-lg">أذكار المساء</div>
-              <div class="text-xs text-gray-500">حصنك عند غروب الشمس</div>
-            </div>
-          </div>
-          <span class="icon text-emerald-400 text-2xl">+</span>
-        </summary>
-        <div class="faq-content">
-          <p>اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ.</p>
-          <p class="mt-3">أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ.</p>
-          <p class="mt-3">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.</p>
-        </div>
-      </details>
-
-      <details class="azkar-card glass rounded-2xl reveal reveal-delay-2">
-        <summary>
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🕌</span>
-            <div>
-              <div class="font-bold text-white text-lg">أذكار بعد الصلاة</div>
-              <div class="text-xs text-gray-500">سنة بعد كل فريضة</div>
-            </div>
-          </div>
-          <span class="icon text-emerald-400 text-2xl">+</span>
-        </summary>
-        <div class="faq-content">
-          <p>أَسْتَغْفِرُ اللَّهَ (ثلاثًا)، اللَّهُمَّ أَنْتَ السَّلَامُ، وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ.</p>
-          <p class="mt-3">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.</p>
-          <p class="mt-3">سُبْحَانَ اللَّهِ (33)، الْحَمْدُ لِلَّهِ (33)، اللَّهُ أَكْبَرُ (33)، ثم تختم المئة بـ "لا إله إلا الله وحده لا شريك له..."</p>
-        </div>
-      </details>
-
-      <details class="azkar-card glass rounded-2xl reveal reveal-delay-3">
-        <summary>
-          <div class="flex items-center gap-3">
-            <span class="text-2xl">🌙</span>
-            <div>
-              <div class="font-bold text-white text-lg">أذكار النوم</div>
-              <div class="text-xs text-gray-500">حصنك قبل النوم</div>
-            </div>
-          </div>
-          <span class="icon text-emerald-400 text-2xl">+</span>
-        </summary>
-        <div class="faq-content">
-          <p>بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، إِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا، وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا بِمَا تَحْفَظُ بِهِ عِبَادَكَ الصَّالِحِينَ.</p>
-          <p class="mt-3">اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ.</p>
-          <p class="mt-3">اقرأ آية الكرسي: "اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ..."</p>
-        </div>
-      </details>
-    </div>
-
-    <div class="text-center mt-10">
-      <a href="https://www.islamicfinder.org/athkar/" target="_blank" rel="noopener" class="btn-ghost inline-flex items-center gap-2">
-        عرض المزيد من الأذكار
-        <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ TESTIMONIALS ============ -->
-<section id="testimonials" class="py-20 lg:py-32 bg-gradient-to-b from-transparent via-yellow-950/10 to-transparent">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="section-label reveal">آراء المستخدمين</span>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
-        ماذا يقول <span class="text-gradient">المسلمون</span> عن KING ABDO؟
-      </h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="testimonial-card glass rounded-2xl p-6 reveal">
-        <div class="flex items-center gap-1 text-yellow-400 mb-3">★★★★★</div>
-        <p class="text-gray-300 text-sm leading-relaxed">"أخيراً محرك بحث يفهم احتياج المسلم! واجهة نظيفة وجميلة جداً، والأذكار مرتبة بشكل رائع. جزاكم الله خيراً."</p>
-        <div class="mt-5 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center font-bold text-white">أ</div>
-          <div>
-            <div class="text-white font-bold text-sm">أحمد محمد</div>
-            <div class="text-xs text-gray-500">القاهرة، مصر</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card glass rounded-2xl p-6 reveal reveal-delay-1">
-        <div class="flex items-center gap-1 text-yellow-400 mb-3">★★★★★</div>
-        <p class="text-gray-300 text-sm leading-relaxed">"ما شاء الله تصميم احترافي يفوق التوقعات. الوصول للقرآن والأذكار صار أسرع بكثير. أصبح محرك البحث المفضل لدي."</p>
-        <div class="mt-5 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center font-bold text-white">ف</div>
-          <div>
-            <div class="text-white font-bold text-sm">فاطمة سعد</div>
-            <div class="text-xs text-gray-500">الرياض، السعودية</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card glass rounded-2xl p-6 reveal reveal-delay-2">
-        <div class="flex items-center gap-1 text-yellow-400 mb-3">★★★★★</div>
-        <p class="text-gray-300 text-sm leading-relaxed">"فكرة رائعة أن يصنع إنسان محرك بحث إسلامي بهذه الجودة. الموقع سريع جداً ومتجاوب مع الجوال. بارك الله فيكم."</p>
-        <div class="mt-5 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center font-bold text-white">ي</div>
-          <div>
-            <div class="text-white font-bold text-sm">يوسف العبد</div>
-            <div class="text-xs text-gray-500">دبي، الإمارات</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -918,7 +538,7 @@
 <section id="faq" class="py-20 lg:py-32">
   <div class="max-w-4xl mx-auto px-5 lg:px-8">
     <div class="text-center mb-12">
-      <span class="section-label reveal">الأسئلة الشائعة</span>
+      <span class="section-label reveal">الأسئلة</span>
       <h2 class="reveal reveal-delay-1 mt-4 text-4xl lg:text-5xl font-black text-white leading-tight">
         لديك <span class="text-gradient">سؤال؟</span>
       </h2>
@@ -931,7 +551,7 @@
           <span class="icon text-emerald-400 text-2xl">+</span>
         </summary>
         <div class="faq-content">
-          KING ABDO SEARCH هو أول محرك بحث إسلامي في العالم صُنع بأيدي بشرية، يجمع لك محركات البحث الشهيرة، القرآن الكريم، الأذكار، وروابط إسلامية موثوقة في واجهة واحدة أنيقة وسريعة.
+          أول محرك بحث إسلامي في العالم صُنع بأيدي بشرية، يجمع لك محركات البحث الشهيرة والقرآن الكريم والأذكار.
         </div>
       </details>
 
@@ -941,7 +561,7 @@
           <span class="icon text-emerald-400 text-2xl">+</span>
         </summary>
         <div class="faq-content">
-          نعم، KING ABDO SEARCH مجاني تماماً ولا يحتوي على إعلانات مزعجة. هدفنا هو خدمة المسلمين حول العالم.
+          نعم، مجاني تماماً بدون إعلانات مزعجة. هدفنا خدمة المسلمين حول العالم.
         </div>
       </details>
 
@@ -951,7 +571,7 @@
           <span class="icon text-emerald-400 text-2xl">+</span>
         </summary>
         <div class="faq-content">
-          نعم، نحن لا نجمع أي بيانات شخصية ولا نتتبع نشاطك. خصوصيتك وأمانك أولويتنا القصوى.
+          نعم، لا نجمع بيانات شخصية ولا نتتبع نشاطك. خصوصيتك أولويتنا.
         </div>
       </details>
 
@@ -961,17 +581,7 @@
           <span class="icon text-emerald-400 text-2xl">+</span>
         </summary>
         <div class="faq-content">
-          بالتأكيد! KING ABDO SEARCH مصمم بتقنية متجاوبة تعمل بشكل ممتاز على جميع الأجهزة: الجوال، التابلت، والكمبيوتر.
-        </div>
-      </details>
-
-      <details class="faq-item glass rounded-2xl reveal reveal-delay-3">
-        <summary>
-          <span class="font-bold text-white text-lg">من صمم KING ABDO SEARCH؟</span>
-          <span class="icon text-emerald-400 text-2xl">+</span>
-        </summary>
-        <div class="faq-content">
-          KING ABDO SEARCH صُمم وصُنع بعناية من قبل  KING ABDO.يهدف لتقديم تجربة فريدة للمسلمين. كل سطر كود كتب بحب ونية صادقة.
+          نعم! مصمم بتقنية متجاوبة تعمل على الجوال والتابلت والكمبيوتر.
         </div>
       </details>
     </div>
@@ -981,338 +591,164 @@
 <!-- ============ ABOUT ============ -->
 <section id="about" class="py-20 lg:py-32">
   <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="glass-strong rounded-3xl p-8 lg:p-12 grid md:grid-cols-3 gap-8 items-center reveal">
-      <div class="md:col-span-1 text-center">
-        <div class="relative inline-block">
-          <div class="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500 to-yellow-500 blur-2xl opacity-50"></div>
-          <div class="relative w-40 h-40 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-7xl border-4 border-white/10">
-            👑
-          </div>
-        </div>
-        <div class="mt-5">
-          <div class="text-2xl font-black text-white">KING ABDO</div>
-          <div class="text-sm text-emerald-400 font-bold">مؤسس المشروع</div>
+    <div class="glass-strong rounded-3xl p-8 lg:p-12 reveal text-center">
+      <div class="mb-8">
+        <div class="relative w-40 h-40 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-7xl border-4 border-white/10 mx-auto">
+          👑
         </div>
       </div>
-      <div class="md:col-span-2">
-        <h3 class="text-3xl font-black text-white mb-3">مرحباً بك في <span class="text-gradient">رحلتي</span></h3>
-        <p class="text-gray-300 leading-relaxed">
-          أنا KING ABDO، مطور ويب شغوف بالتكنولوجيا وخدمة الإسلام. صممت هذا الموقع ليكون بوابةأنيقة تجمع بين الفائدة والتصميم الحديث، بحيث يستطيع أي زائر الوصول بسرعة إلى البحث، القرآن الكريم، والأذكار اليومية. هدفي هو تقديم تجربة رقمية نظيفة، سريعة، ومفيدة لكل مسلم في أي مكان في العالم.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#search" class="btn-primary text-sm">جرب البحث</a>
-          
-        </div>
+      <div>
+        <div class="text-2xl font-black text-white">KING ABDO</div>
+        <div class="text-sm text-emerald-400 font-bold">مؤسس المشروع</div>
       </div>
+      <h3 class="text-3xl font-black text-white mb-3 mt-6">مرحباً بك في رحلتي</h3>
+      <p class="text-gray-300 leading-relaxed max-w-2xl mx-auto">
+        أنا KING ABDO، مطور ويب شغوف بالتكنولوجيا وخدمة الإسلام. صممت هذا الموقع ليكون بوابة أنيقة تجمع بين الفائدة والجمال.
+      </p>
     </div>
   </div>
 </section>
-
-<!-- ============ CTA ============ -->
-<section class="py-20 lg:py-32 relative">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="relative overflow-hidden rounded-3xl p-10 lg:p-16 text-center reveal">
-      <div class="absolute inset-0 bg-gradient-to-br from-emerald-600 via-emerald-700 to-yellow-700"></div>
-      <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3), transparent 50%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.2), transparent 50%);"></div>
-
-      <div class="relative z-10">
-        <div class="text-5xl mb-4">🚀</div>
-        <h2 class="text-3xl lg:text-5xl font-black text-white leading-tight">
-          ابدأ رحلتك الآن مع<br><span class="text-yellow-200">KING ABDO</span>
-        </h2>
-        <p class="mt-4 text-emerald-50 text-lg max-w-2xl mx-auto">
-          أول محرك بحث إسلامي في العالم، بين يديك مجاناً. ابحث، اقرأ، وتذكر في أي وقت وأي مكان.
-        </p>
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="#search" class="btn-gold inline-flex items-center gap-2">
-            ابدأ البحث الآن
-            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
-                </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
-<footer class="border-t border-white/5 bg-black/30 backdrop-blur-xl">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
-    <div class="grid md:grid-cols-4 gap-10">
-      <div class="md:col-span-2">
-        <a href="#home" class="flex items-center gap-3 group">
-          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-            <span class="text-white font-black text-lg">K</span>
-          </div>
-          <div class="leading-tight">
-            <div class="font-black text-white text-lg">KING ABDO</div>
-            <div class="text-[10px] text-emerald-400 font-semibold tracking-widest">ISLAMIC SEARCH</div>
-          </div>
-        </a>
-        <p class="mt-4 text-gray-400 text-sm leading-relaxed max-w-md">
-          أول محرك بحث إسلامي في العالم، صُنع بأيدي بشرية لخدمة المسلمين في كل مكان. نهدف لتقديم تجربة رقمية نظيفة، سريعة، ومفيدة.
-        </p>
-        <div class="mt-5 flex items-center gap-3">
-          
-          <a href="https://www.linkedin.com/in/abdelrahman-mohamed-shehata-127a48366" aria-label="LINKED IN" class="w-10 h-10 rounded-xl glass flex items-center justify-center hover:bg-white/10 transition">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.025-3.061-1.867-3.061-1.868 0-2.154 1.458-2.154 2.96v5.705h-3v-11h2.881v1.494h.041c.401-.761 1.382-1.562 2.845-1.562 3.042 0 3.602 2 3.602 4.6v6.468z"/></svg>
-          </a>
-          
-        </div>
-      </div>
-
-      <div>
-        <h4 class="font-bold text-white mb-4">روابط سريعة</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#home" class="text-gray-400 hover:text-emerald-400 transition">الرئيسية</a></li>
-          <li><a href="#features" class="text-gray-400 hover:text-emerald-400 transition">المميزات</a></li>
-          <li><a href="#search" class="text-gray-400 hover:text-emerald-400 transition">البحث</a></li>
-          <li><a href="#quran" class="text-gray-400 hover:text-emerald-400 transition">القرآن</a></li>
-          <li><a href="#azkar" class="text-gray-400 hover:text-emerald-400 transition">الأذكار</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-bold text-white mb-4">المزيد</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="https://a181-coder.github.io/PROFILE/" class="text-gray-400 hover:text-emerald-400 transition">عني</a></li>
-          <li><a href="#faq" class="text-gray-400 hover:text-emerald-400 transition">الأسئلة</a></li>
-          <li><a href="#testimonials" class="text-gray-400 hover:text-emerald-400 transition">آراء المستخدمين</a></li>
-          
-        </ul>
-      </div>
-    </div>
-
-    <div class="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-gray-500">© <span id="year"></span> KING ABDO. جميع الحقوق محفوظة. صُنع بحب ❤️</p>
-
-      
-    </div>
-  </div>
-</footer>
-
-<!-- Back to top -->
-<button id="backTop" aria-label="العودة للأعلى" class="fixed bottom-6 left-6 w-12 h-12 rounded-full btn-primary !p-0 flex items-center justify-center opacity-0 pointer-events-none transition-all z-40">
-  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-</button>
-
-<style>
-  /* engine-pill & engine-card styling */
-  .engine-pill {
-    padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600;
-    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-    color: #d1d5db; transition: all 0.25s; cursor: pointer;
-  }
-  .engine-pill:hover { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.4); color: #6ee7b7; transform: translateY(-1px); }
-  .engine-card {
-    text-align: right; padding: 1.5rem; border-radius: 1.5rem; cursor: pointer;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.4s cubic-bezier(.2,.8,.2,1);
-  }
-  .engine-card:hover { transform: translateY(-4px); border-color: rgba(16,185,129,0.4); background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(212,175,55,0.05)); box-shadow: 0 20px 50px -20px rgba(16,185,129,0.4); }
-  .quran-card {
-    display: block; padding: 1.5rem; border-radius: 1.5rem; cursor: pointer;
-    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.4s;
-  }
-  .quran-card:hover { transform: translateY(-4px); border-color: rgba(16,185,129,0.4); background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(212,175,55,0.05)); }
-</style>
 
 <script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
+  // ====== NAVBAR SCROLL EFFECT ======
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 
-  // ============== UTILITIES ==============
-  const $ = (s, p = document) => p.querySelector(s);
-  const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+  // ====== MOBILE MENU ======
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  // ============== ENGINE URL BUILDER ==============
-  const ENGINES = {
-    google:    q => `https://www.google.com/search?q=${encodeURIComponent(q)}`,
-    bing:      q => `https://www.bing.com/search?q=${encodeURIComponent(q)}`,
-    duckduckgo:q => `https://duckduckgo.com/?q=${encodeURIComponent(q)}`,
-    youtube:   q => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`,
-    quran:     q => `https://www.google.com/search?q=${encodeURIComponent(q + ' site:quran.com')}`,
-    islamway:  q => `https://www.islamway.net/index.php?search=${encodeURIComponent(q)}`
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    menuOverlay.classList.remove('hidden');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuOverlay.classList.add('hidden');
+  });
+
+  menuOverlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuOverlay.classList.add('hidden');
+  });
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuOverlay.classList.add('hidden');
+    });
+  });
+
+  // ====== SCROLL REVEAL ======
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
   };
 
-  function performSearch(query, engine) {
-    query = (query || '').trim();
-    if (!query) {
-      flashInput();
-      return;
-    }
-    const url = (ENGINES[engine] || ENGINES.google)(query);
-    window.open(url, '_blank', 'noopener');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ====== COUNTER ANIMATION ======
+  function animateCounter(element, target) {
+    let current = 0;
+    const speed = target / 30;
+    
+    const timer = setInterval(() => {
+      current += speed;
+      if (current >= target) {
+        element.textContent = target;
+        clearInterval(timer);
+      } else {
+        element.textContent = Math.floor(current);
+      }
+    }, 50);
   }
 
-  function flashInput() {
-    $$('#heroQuery, #mainQuery').forEach(el => {
-      el.style.transition = 'all 0.3s';
-      el.style.boxShadow = '0 0 0 4px rgba(239,68,68,0.2)';
-      el.style.borderColor = 'rgba(239,68,68,0.5)';
-      setTimeout(() => {
-        el.style.boxShadow = '';
-        el.style.borderColor = '';
-      }, 1000);
-    });
-  }
+  const statsSection = document.querySelector('#home');
+  let statsAnimated = false;
 
-  // ============== HERO SEARCH ==============
-  $('#heroSearchForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const engine = $('#engineSelect').value;
-    const q = $('#heroQuery').value;
-    performSearch(q, engine);
-  });
-
-  // Suggestion chips
-  $$('.suggestion').forEach(btn => {
-    btn.addEventListener('click', () => {
-      $('#heroQuery').value = btn.dataset.q;
-      const engine = $('#engineSelect').value;
-      performSearch(btn.dataset.q, engine);
-    });
-  });
-
-  // ============== MAIN SEARCH ==============
-  $('#mainSearchForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const q = $('#mainQuery').value;
-    const engine = window.__activeEngine || 'google';
-    performSearch(q, engine);
-  });
-
-  // Engine pills
-  $$('.engine-pill').forEach(p => {
-    p.addEventListener('click', () => {
-      window.__activeEngine = p.dataset.engine;
-      $$('.engine-pill').forEach(x => {
-        x.classList.remove('bg-emerald-500/20', 'border-emerald-500/40', 'text-emerald-300');
-      });
-      p.classList.add('bg-emerald-500/20', 'border-emerald-500/40', 'text-emerald-300');
-    });
-  });
-
-  // Engine cards
-  $$('.engine-card').forEach(c => {
-    c.addEventListener('click', () => {
-      const q = $('#mainQuery').value || 'الإسلام';
-      performSearch(q, c.dataset.engine);
-    });
-  });
-
-  // ============== NAVBAR SCROLL ==============
-  const nav = $('#navbar');
-  const backTop = $('#backTop');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-    if (window.scrollY > 600) {
-      backTop.style.opacity = '1';
-      backTop.style.pointerEvents = 'auto';
-    } else {
-      backTop.style.opacity = '0';
-      backTop.style.pointerEvents = 'none';
-    }
-  });
-  backTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-
-  // ============== MOBILE MENU ==============
-  const menuBtn = $('#menuBtn');
-  const closeMenu = $('#closeMenu');
-  const mobileMenu = $('#mobileMenu');
-  const menuOverlay = $('#menuOverlay');
-  function openMenu() { mobileMenu.classList.add('open'); menuOverlay.classList.remove('hidden'); }
-  function hideMenu() { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); }
-  menuBtn.addEventListener('click', openMenu);
-  closeMenu.addEventListener('click', hideMenu);
-  menuOverlay.addEventListener('click', hideMenu);
-  $$('.mobile-link').forEach(l => l.addEventListener('click', hideMenu));
-
-  // ============== SCROLL REVEAL ==============
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-  $$('.reveal').forEach(el => io.observe(el));
-
-  // ============== STATS COUNTER ==============
-  const counterIO = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const el = e.target;
-        const target = +el.dataset.target;
-        let current = 0;
-        const step = Math.max(1, Math.ceil(target / 40));
-        const interval = setInterval(() => {
-          current += step;
-          if (current >= target) { current = target; clearInterval(interval); }
-          el.textContent = current + (target === 100 ? '%' : '');
-        }, 30);
-        counterIO.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  $$('.stat-num').forEach(el => counterIO.observe(el));
-
-  // ============== FEATURE CARD MOUSE GLOW ==============
-  $$('.feature-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      card.style.setProperty('--my', `${e.clientY - r.top}px`);
-    });
-  });
-
-  // ============== RIPPLE EFFECT ON ALL BUTTONS ==============
-  $$('.btn-primary, .btn-gold, .btn-ghost, .engine-pill, .engine-card, .quran-card').forEach(btn => {
-    btn.classList.add('ripple');
-    btn.addEventListener('click', function(e) {
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size/2;
-      const y = e.clientY - rect.top - size/2;
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple-effect';
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      this.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-  // ============== FAQ EXCLUSIVE OPEN (optional, allows multiple) ==============
-  // Keep as default (multiple open allowed). Good for UX.
-
-  // ============== YEAR ==============
-  $('#year').textContent = new Date().getFullYear();
-
-  // ============== KEYBOARD SHORTCUT (press "/" to focus search) ==============
-  document.addEventListener('keydown', e => {
-    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'SELECT') {
-      e.preventDefault();
-      $('#heroQuery').focus();
-      window.scrollTo({top: 0, behavior: 'smooth'});
+    if (!statsAnimated && statsSection.offsetTop < window.scrollY + window.innerHeight) {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        animateCounter(el, target);
+      });
+      statsAnimated = true;
     }
   });
 
-  // ============== SMOOTH ANCHOR SCROLL WITH NAVBAR OFFSET ==============
-  $$('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id.length > 1 && $(id)) {
-        e.preventDefault();
-        const y = $(id).getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+  // ====== SEARCH FUNCTIONALITY ======
+  const searchEngines = {
+    google: 'https://www.google.com/search?q=',
+    bing: 'https://www.bing.com/search?q=',
+    duckduckgo: 'https://duckduckgo.com/?q=',
+    youtube: 'https://www.youtube.com/results?search_query=',
+    quran: 'https://a181-coder.github.io/QURAN-S-HOME/?q=',
+    islamway: 'https://www.islamway.net/search?q='
+  };
+
+  let selectedEngine = 'google';
+
+  // Engine pill selection
+  document.querySelectorAll('[data-engine]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if (e.target.classList.contains('engine-pill')) {
+        document.querySelectorAll('[data-engine].engine-pill').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        selectedEngine = e.target.dataset.engine;
+      } else if (e.target.closest('[data-engine]')) {
+        selectedEngine = e.target.closest('[data-engine]').dataset.engine;
       }
+    });
+  });
+
+  // Hero search form
+  document.getElementById('heroSearchForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = document.getElementById('heroQuery').value;
+    const engine = document.getElementById('engineSelect').value;
+    if (query.trim()) {
+      window.open(searchEngines[engine] + encodeURIComponent(query), '_blank');
+    }
+  });
+
+  // Main search form
+  document.getElementById('mainSearchForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = document.getElementById('mainQuery').value;
+    if (query.trim()) {
+      window.open(searchEngines[selectedEngine] + encodeURIComponent(query), '_blank');
+    }
+  });
+
+  // Suggestion buttons
+  document.querySelectorAll('.suggestion').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const query = btn.dataset.q;
+      document.getElementById('heroQuery').value = query;
+      window.open(searchEngines['google'] + encodeURIComponent(query), '_blank');
     });
   });
 </script>
+
 </body>
 </html>
